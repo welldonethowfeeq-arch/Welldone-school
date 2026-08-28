@@ -3,295 +3,487 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welldone Nursery & Primary Islamic School | Official Website</title>
+  <title>Welldone Schools | Deen & Duniya Education</title>
+  
+  <!-- FontAwesome & Google Fonts -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
   <style>
     :root {
-      --primary: #0d3b66;
-      --secondary: #f4d35e;
+      --primary: #0a2540;
+      --secondary: #d4af37;
       --accent: #e76f51;
-      --dark: #1d3557;
+      --light-bg: #f8f9fa;
+      --text-dark: #2b2d42;
+      --text-light: #6c757d;
       --white: #ffffff;
       --success: #25d366;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
-    body { background-color: #f4f7f6; color: #333; line-height: 1.6; }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+    body { background-color: var(--light-bg); color: var(--text-dark); line-height: 1.6; }
 
-    /* Top Bar & Header */
-    .top-bar { background: var(--dark); color: #fff; padding: 8px 15px; font-size: 0.85rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
-    .top-bar a { color: var(--secondary); text-decoration: none; font-weight: 600; }
-    header { background: var(--white); padding: 15px 20px; box-shadow: 0 2px 15px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; }
-    .logo { display: flex; align-items: center; gap: 12px; }
-    .logo-icon { width: 45px; height: 45px; background: var(--primary); color: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: bold; border: 2px solid var(--secondary); }
-    .logo-text h1 { font-size: 1.2rem; color: var(--primary); font-weight: 700; }
-    .logo-text p { font-size: 0.75rem; color: #666; font-weight: 600; }
+    /* Top Bar */
+    .top-bar { background: #051329; color: var(--white); padding: 8px 5%; font-size: 0.85rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+    .top-bar a { color: var(--secondary); text-decoration: none; font-weight: 500; }
 
-    /* Hero Banner */
-    .hero { background: linear-gradient(rgba(13, 59, 102, 0.88), rgba(0, 31, 63, 0.92)), url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1200&auto=format&fit=crop&q=80') center/cover no-repeat; color: var(--white); text-align: center; padding: 50px 20px; }
-    .hero h2 { font-size: 1.8rem; margin-bottom: 10px; }
-    .btn-group { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 15px; }
-    .btn { padding: 10px 20px; border-radius: 25px; text-decoration: none; font-weight: bold; font-size: 0.9rem; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
-    .btn-primary { background: var(--secondary); color: var(--primary); }
-    .btn-homework { background: var(--accent); color: var(--white); }
+    /* Header & Navigation */
+    header { background: var(--white); box-shadow: 0 4px 20px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 1000; }
+    .nav-container { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand-logo { width: 50px; height: 50px; background: var(--primary); color: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.3rem; border: 2px solid var(--secondary); }
+    .brand-text h1 { font-size: 1.1rem; color: var(--primary); font-weight: 700; }
+    .brand-text p { font-size: 0.75rem; color: var(--accent); font-weight: 600; }
 
-    .container { max-width: 900px; margin: auto; padding: 20px 15px; }
-    .section-title { text-align: center; margin: 30px 0 15px 0; }
-    .section-title h2 { color: var(--primary); font-size: 1.5rem; }
+    nav ul { display: flex; list-style: none; gap: 20px; }
+    nav ul li a { text-decoration: none; color: var(--text-dark); font-weight: 500; font-size: 0.9rem; transition: 0.3s; }
+    nav ul li a:hover { color: var(--secondary); }
+    .nav-btn { background: var(--secondary); color: var(--primary) !important; padding: 8px 18px; border-radius: 20px; font-weight: 600 !important; }
 
-    /* Homework Section */
-    .hw-card { background: var(--white); border-radius: 15px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); margin-bottom: 30px; border-top: 5px solid var(--accent); }
-    .class-selector { width: 100%; padding: 12px; border: 2px solid var(--primary); border-radius: 8px; font-size: 0.95rem; font-weight: bold; color: var(--primary); outline: none; margin-bottom: 15px; background: #fff; }
-    .hw-box { display: none; background: #fafafa; border: 1px solid #e0e0e0; border-radius: 8px; padding: 15px; }
-    .hw-box.active { display: block; }
-    .hw-list { list-style: none; }
-    .hw-list li { padding: 8px 0; border-bottom: 1px dashed #ddd; font-size: 0.9rem; }
+    /* Hero Section */
+    .hero { background: linear-gradient(rgba(10, 37, 64, 0.85), rgba(10, 37, 64, 0.9)), url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1600&auto=format&fit=crop&q=80') center/cover no-repeat; color: var(--white); padding: 100px 20px; text-align: center; }
+    .hero h2 { font-size: 2.5rem; margin-bottom: 15px; font-weight: 700; color: var(--white); }
+    .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 25px auto; color: #e0e0e0; }
+    .btn-group { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+    .btn { padding: 12px 28px; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 0.95rem; border: none; cursor: pointer; transition: 0.3s; }
+    .btn-secondary { background: var(--secondary); color: var(--primary); }
+    .btn-outline { background: transparent; color: var(--white); border: 2px solid var(--white); }
+    .btn:hover { opacity: 0.9; transform: translateY(-2px); }
 
-    /* School Timings & Daily Routine */
-    .routine-card { background: var(--white); padding: 20px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 30px; border-top: 5px solid var(--primary); }
-    .routine-list { list-style: none; margin-top: 10px; }
-    .routine-item { display: flex; justify-content: space-between; align-items: center; padding: 12px 10px; border-bottom: 1px solid #eee; flex-wrap: wrap; gap: 8px; font-size: 0.9rem; }
-    .routine-item:last-child { border-bottom: none; }
-    .time-badge { background: #eef4fb; color: var(--primary); font-weight: 700; padding: 4px 12px; border-radius: 15px; font-size: 0.85rem; }
+    /* Common Layout Components */
+    .section { padding: 80px 20px; max-width: 1200px; margin: auto; }
+    .bg-white { background: var(--white); }
+    .section-header { text-align: center; margin-bottom: 50px; }
+    .section-header h2 { font-size: 2rem; color: var(--primary); position: relative; display: inline-block; padding-bottom: 10px; }
+    .section-header h2::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 3px; background: var(--secondary); }
+    .section-header p { color: var(--text-light); margin-top: 10px; }
 
-    /* Fee Table & Online Payment Box */
-    .fee-card { background: var(--white); padding: 20px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 30px; border-top: 5px solid var(--secondary); }
-    .fee-table { width: 100%; border-collapse: collapse; margin-top: 10px; margin-bottom: 20px; font-size: 0.9rem; }
-    .fee-table th, .fee-table td { padding: 12px 10px; text-align: left; border-bottom: 1px solid #eee; }
-    .fee-table th { background: #f8f9fa; color: var(--primary); font-weight: 700; }
-    
-    .payment-box { background: #fdfbf7; border: 2px dashed var(--secondary); border-radius: 12px; padding: 18px; text-align: center; }
-    .upi-id { background: var(--white); border: 1px solid #ddd; padding: 8px 15px; border-radius: 20px; font-weight: 700; color: var(--dark); display: inline-block; margin: 10px 0; font-size: 1rem; }
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
 
-    /* WhatsApp Admission Form & Floating Button */
-    .form-card { background: var(--white); padding: 20px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 30px; border-top: 5px solid var(--success); }
-    .form-control { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; font-size: 0.9rem; margin-bottom: 12px; }
-    .btn-whatsapp { background: var(--success); color: var(--white); width: 100%; padding: 12px; border: none; border-radius: 25px; font-weight: bold; cursor: pointer; font-size: 0.95rem; }
+    /* Cards */
+    .card { background: var(--white); border-radius: 12px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #edf2f7; transition: 0.3s; }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
+    .card-icon { font-size: 2.2rem; color: var(--secondary); margin-bottom: 15px; }
 
-    .whatsapp-btn { position: fixed; bottom: 20px; right: 20px; background: var(--success); color: var(--white); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 26px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 1000; text-decoration: none; }
-    footer { background: var(--dark); color: #aaa; text-align: center; padding: 25px 20px; font-size: 0.85rem; margin-top: 30px; }
+    /* Feature Tabs */
+    .tabs { display: flex; justify-content: center; gap: 15px; margin-bottom: 40px; flex-wrap: wrap; }
+    .tab-btn { padding: 10px 25px; border: 1px solid var(--primary); background: transparent; border-radius: 20px; cursor: pointer; font-weight: 600; color: var(--primary); transition: 0.3s; }
+    .tab-btn.active, .tab-btn:hover { background: var(--primary); color: var(--white); }
+
+    /* Tables */
+    .custom-table { width: 100%; border-collapse: collapse; margin-top: 15px; background: var(--white); border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+    .custom-table th, .custom-table td { padding: 15px; text-align: left; border-bottom: 1px solid #edf2f7; }
+    .custom-table th { background: var(--primary); color: var(--white); }
+
+    /* Forms */
+    .form-group { margin-bottom: 15px; }
+    .form-group label { display: block; margin-bottom: 5px; font-weight: 500; font-size: 0.9rem; }
+    .form-control { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px; outline: none; font-size: 0.95rem; }
+    .form-control:focus { border-color: var(--primary); }
+
+    /* Gallery Grid */
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; }
+    .gallery-item { height: 200px; border-radius: 8px; overflow: hidden; position: relative; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.3s; }
+    .gallery-item:hover img { transform: scale(1.05); }
+
+    /* WhatsApp Float */
+    .whatsapp-float { position: fixed; bottom: 25px; right: 25px; background: var(--success); color: var(--white); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 1000; text-decoration: none; }
+
+    /* Footer */
+    footer { background: #051329; color: #a0aec0; padding: 60px 20px 20px 20px; }
+    .footer-container { max-width: 1200px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
+    .footer-col h3 { color: var(--white); margin-bottom: 20px; font-size: 1.1rem; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul li a { color: #a0aec0; text-decoration: none; font-size: 0.9rem; }
+    .copyright { text-align: center; border-top: 1px solid #1a202c; padding-top: 20px; margin-top: 40px; font-size: 0.85rem; }
+
+    @media (max-width: 768px) {
+      nav ul { display: none; }
+      .hero h2 { font-size: 1.8rem; }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Top Bar -->
+  <!-- Top Contact Bar -->
   <div class="top-bar">
-    <span>📢 Welldone School | Admissions Open 2026</span>
-    <a href="tel:9600306532"><i class="fa-solid fa-phone"></i> 9600306532</a>
+    <div>
+      <i class="fa-solid fa-location-dot"></i> Puliangudi, Tamil Nadu
+      <span style="margin: 0 10px;">|</span>
+      <i class="fa-solid fa-envelope"></i> rafiqraja532@gmail.com
+    </div>
+    <div>
+      <a href="tel:9600306532"><i class="fa-solid fa-phone"></i> +91 9600306532</a>
+    </div>
   </div>
 
-  <!-- Main Header -->
+  <!-- Main Navigation -->
   <header>
-    <div class="logo">
-      <div class="logo-icon">WD</div>
-      <div class="logo-text">
-        <h1>Welldone School</h1>
-        <p>DEEN & DUNYA TOGETHER</p>
+    <div class="nav-container">
+      <div class="brand">
+        <div class="brand-logo">WD</div>
+        <div class="brand-text">
+          <h1>Welldone Group of Schools</h1>
+          <p>Nursery & Primary | TMS Matriculation</p>
+        </div>
       </div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#deen">Deen</a></li>
+          <li><a href="#duniya">Duniya</a></li>
+          <li><a href="#academics">Academics</a></li>
+          <li><a href="#admissions" class="nav-btn">Admissions</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
-  <!-- Hero Banner -->
-  <section class="hero">
-    <h2>Nurturing Faith, Knowledge & Excellence</h2>
-    <p>Providing holistic education integrated with Islamic values in Puliangudi.</p>
+  <!-- 1. Home Page Section -->
+  <section class="hero" id="home">
+    <h2>Nurturing Faith, Knowledge & Future Leaders</h2>
+    <p>Balanced Excellence in Deen and Duniya — Shaping strong character and modern competence for a better tomorrow.</p>
     <div class="btn-group">
-      <a href="#homework-portal" class="btn btn-homework"><i class="fa-solid fa-book-open"></i> Daily Homework</a>
-      <a href="#inquiry-form" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i> Admission Form</a>
+      <a href="#admissions" class="btn btn-secondary"><i class="fa-solid fa-paper-plane"></i> Apply for Admission</a>
+      <a href="#about" class="btn btn-outline"><i class="fa-solid fa-circle-info"></i> Discover Our Vision</a>
     </div>
   </section>
 
-  <div class="container">
-
-    <!-- 1. Daily Homework Portal -->
-    <div class="section-title" id="homework-portal">
-      <h2>Daily Student Homework Portal</h2>
+  <!-- 2. About the School -->
+  <section class="section" id="about">
+    <div class="section-header">
+      <h2>About Our Schools</h2>
+      <p>Building a generation rooted in Islamic values and academic distinction</p>
     </div>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-school"></i></div>
+        <h3>Welldone Nursery & Primary School</h3>
+        <p>Focused on early childhood development, foundation literacy, numerical concepts, and early Islamic moral grounding in a safe, caring setting.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <h3>TMS Welldone Matriculation School</h3>
+        <p>Providing advanced matriculation curriculum alongside structured Islamic studies, preparing students for competitive higher education paths.</p>
+      </div>
+    </div>
+  </section>
 
-    <div class="hw-card">
-      <label style="font-weight: 600; font-size: 0.85rem; margin-bottom: 5px; display: block;">Select Student Class:</label>
-      <select id="classSelect" class="class-selector" onchange="showClassHomework()">
-        <option value="std1">Standard 1</option>
-        <option value="std2">Standard 2</option>
-        <option value="std3">Standard 3</option>
-        <option value="std4">Standard 4</option>
-        <option value="std5">Standard 5</option>
-      </select>
+  <!-- 3. Deen Education Section -->
+  <section class="section bg-white" id="deen">
+    <div class="section-header">
+      <h2>Deen Education 🕌</h2>
+      <p>Comprehensive Islamic spiritual and moral foundation</p>
+    </div>
+    <div class="grid-4">
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-quran"></i></div>
+        <h4>Qur'an & Tajweed</h4>
+        <p>Correct pronunciation, recitation skills, and memorization tracks.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-hands-praying"></i></div>
+        <h4>Islamic Manners (Akhlaq)</h4>
+        <p>Embedding respect, empathy, and integrity in daily conduct.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-language"></i></div>
+        <h4>Arabic Language</h4>
+        <p>Basic to conversational Arabic language proficiency.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-kaaba"></i></div>
+        <h4>Seerah & Duas</h4>
+        <p>Lessons from the life of Prophet Muhammad ﷺ & essential daily supplications.</p>
+      </div>
+    </div>
+  </section>
 
-      <div id="std1" class="hw-box active">
-        <h4 style="color:var(--primary); margin-bottom:8px;">Standard 1 Homework</h4>
-        <ul class="hw-list">
-          <li><strong>English:</strong> Write A to Z two times in notebook.</li>
-          <li><strong>Math:</strong> Learn numbers 1 to 50.</li>
+  <!-- 4. Duniya / Academic Education -->
+  <section class="section" id="duniya">
+    <div class="section-header">
+      <h2>Duniya / Academic Education 📚</h2>
+      <p>Modern science, arts, technology, and critical thinking</p>
+    </div>
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-flask"></i></div>
+        <h3>STEM Foundation</h3>
+        <p>Hands-on Mathematics, Physics, Chemistry, and Biological concepts to foster inquiry and problem-solving skills.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-laptop-code"></i></div>
+        <h3>Computer & Digital Skills</h3>
+        <p>Practical digital literacy, basic coding concepts, and safe usage of modern educational technology.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-book"></i></div>
+        <h3>Language Proficiency</h3>
+        <p>Strong emphasis on English communication, grammar, literature, and regional language development.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Our Unique Approach -->
+  <section class="section bg-white">
+    <div class="section-header">
+      <h2>Our Unique Approach ⭐</h2>
+    </div>
+    <div style="max-width: 800px; margin: auto; text-align: center; background: #fdfbf7; border: 2px dashed var(--secondary); padding: 40px; border-radius: 15px;">
+      <h3 style="color: var(--primary); margin-bottom: 15px;">Integrative Holistic Education</h3>
+      <p style="font-size: 1.1rem; color: var(--text-dark);">
+        "We prepare students not only for successful careers in this world but also to become responsible, morally strong individuals guided by Islamic values."
+      </p>
+    </div>
+  </section>
+
+  <!-- 6. Admissions Section -->
+  <section class="section" id="admissions">
+    <div class="section-header">
+      <h2>Admissions Information</h2>
+      <p>Join the Welldone School Family</p>
+    </div>
+    <div class="grid-2">
+      <div>
+        <h3>Admission Process</h3>
+        <ol style="margin-left: 20px; margin-top: 15px; margin-bottom: 25px;">
+          <li style="margin-bottom: 10px;">Submit Online Enquiry or Visit School Office</li>
+          <li style="margin-bottom: 10px;">Student Assessment & Interaction Session</li>
+          <li style="margin-bottom: 10px;">Verification of Documents & Fee Payment</li>
+          <li style="margin-bottom: 10px;">Confirmation of Seat Allocation</li>
+        </ol>
+
+        <h4>Required Documents:</h4>
+        <ul style="margin-left: 20px; margin-top: 10px; color: var(--text-light);">
+          <li>Student Birth Certificate</li>
+          <li>Transfer Certificate (TC) if applicable</li>
+          <li>Passport Size Photos (4 Copies)</li>
+          <li>Aadhaar Card Copy (Student & Parents)</li>
         </ul>
       </div>
 
-      <div id="std2" class="hw-box">
-        <h4 style="color:var(--primary); margin-bottom:8px;">Standard 2 Homework</h4>
-        <ul class="hw-list">
-          <li><strong>English:</strong> Read Lesson 3 aloud.</li>
-          <li><strong>Math:</strong> Practice page 24 addition sums.</li>
-        </ul>
-      </div>
-
-      <div id="std3" class="hw-box">
-        <h4 style="color:var(--primary); margin-bottom:8px;">Standard 3 Homework</h4>
-        <ul class="hw-list">
-          <li><strong>Science:</strong> Draw a plant diagram in your notebook.</li>
-        </ul>
-      </div>
-
-      <div id="std4" class="hw-box">
-        <h4 style="color:var(--primary); margin-bottom:8px;">Standard 4 Homework</h4>
-        <ul class="hw-list">
-          <li><strong>Social:</strong> Read Chapter 2 and complete question 1.</li>
-        </ul>
-      </div>
-
-      <div id="std5" class="hw-box">
-        <h4 style="color:var(--primary); margin-bottom:8px;">Standard 5 Homework</h4>
-        <ul class="hw-list">
-          <li><strong>English:</strong> Write a short essay on "My School".</li>
-        </ul>
+      <div class="card" style="border-top: 5px solid var(--success);">
+        <h3 style="margin-bottom: 20px;">Online Admission Inquiry</h3>
+        <form onsubmit="handleFormSubmit(event)">
+          <div class="form-group">
+            <label>Parent Name</label>
+            <input type="text" id="parent" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" id="phone" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label>Student Name</label>
+            <input type="text" id="student" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label>Select School</label>
+            <select id="school" class="form-control" required>
+              <option value="Welldone Nursery & Primary">Welldone Nursery & Primary School</option>
+              <option value="TMS Welldone Matriculation">TMS Welldone Matriculation School</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-secondary" style="width: 100%;"><i class="fa-brands fa-whatsapp"></i> Submit Inquiry via WhatsApp</button>
+        </form>
       </div>
     </div>
+  </section>
 
-    <!-- 2. School Timings & Daily Routine -->
-    <div class="section-title">
-      <h2>School Timings & Daily Routine</h2>
+  <!-- 7. Academics -->
+  <section class="section bg-white" id="academics">
+    <div class="section-header">
+      <h2>Academic Overview</h2>
     </div>
-    <div class="routine-card">
-      <ul class="routine-list">
-        <li class="routine-item">
-          <span><i class="fa-solid fa-quran" style="color: var(--accent);"></i> Morning Assembly & Quran Recitation</span>
-          <span class="time-badge">09:00 AM - 09:30 AM</span>
-        </li>
-        <li class="routine-item">
-          <span><i class="fa-solid fa-graduation-cap" style="color: var(--primary);"></i> Academic Sessions (Core Subjects)</span>
-          <span class="time-badge">09:30 AM - 12:30 PM</span>
-        </li>
-        <li class="routine-item">
-          <span><i class="fa-solid fa-utensils" style="color: var(--secondary);"></i> Lunch Break & Zuhr Prayer</span>
-          <span class="time-badge">12:30 PM - 01:30 PM</span>
-        </li>
-        <li class="routine-item">
-          <span><i class="fa-solid fa-book-quran" style="color: var(--accent);"></i> Deeniyath & Islamic Studies</span>
-          <span class="time-badge">01:30 PM - 03:00 PM</span>
-        </li>
-        <li class="routine-item">
-          <span><i class="fa-solid fa-child" style="color: var(--primary);"></i> Activity Class & School Dispersal</span>
-          <span class="time-badge">03:00 PM - 03:30 PM</span>
-        </li>
-      </ul>
-    </div>
+    <table class="custom-table">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Classes Offered</strong></td>
+          <td>Pre-KG, LKG, UKG, Standard 1 to Standard 10</td>
+        </tr>
+        <tr>
+          <td><strong>Teaching Methodology</strong></td>
+          <td>Activity-Based Learning (ABL), Visual Learning Aids, and Interactive Classroom Discussions</td>
+        </tr>
+        <tr>
+          <td><strong>Examination System</strong></td>
+          <td>Continuous & Comprehensive Evaluation (CCE), Term Examinations, and Periodic Assessments</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
 
-    <!-- 3. Fee Structure & Bank Payment Info -->
-    <div class="section-title">
-      <h2>Fee Structure & Online Payment</h2>
+  <!-- 8. Facilities -->
+  <section class="section">
+    <div class="section-header">
+      <h2>Campus Facilities</h2>
     </div>
-    <div class="fee-card">
-      <table class="fee-table">
-        <thead>
-          <tr>
-            <th>Class / Grade</th>
-            <th>Term 1 Fee</th>
-            <th>Term 2 Fee</th>
-            <th>Term 3 Fee</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>LKG & UKG</strong></td>
-            <td>₹3,500</td>
-            <td>₹3,500</td>
-            <td>₹3,000</td>
-          </tr>
-          <tr>
-            <td><strong>Standard 1 to 3</strong></td>
-            <td>₹4,000</td>
-            <td>₹4,000</td>
-            <td>₹3,500</td>
-          </tr>
-          <tr>
-            <td><strong>Standard 4 & 5</strong></td>
-            <td>₹4,500</td>
-            <td>₹4,500</td>
-            <td>₹4,000</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <!-- Bank & UPI Payment Box -->
-      <div class="payment-box">
-        <h4 style="color: var(--primary); font-size: 1.1rem;"><i class="fa-solid fa-building-columns"></i> Pay School Fees Online</h4>
-        <p style="font-size:0.85rem; color:#666; margin-top:4px;">You can pay fees via GPay, PhonePe, or Paytm:</p>
-        
-        <div class="upi-id"><i class="fa-solid fa-mobile-screen"></i> UPI ID: 9600306532@upi</div>
-        
-        <p style="font-size:0.8rem; color:#777;">Account Name: Welldone Islamic School</p>
-        <p style="font-size:0.85rem; margin-top:10px; font-weight:bold; color:var(--accent);">
-          ⚠️ Note: After paying online, please send the payment receipt screenshot to <a href="https://wa.me/919600306532" style="color:var(--success); text-decoration:none;">WhatsApp (9600306532)</a> with your child's name and class.
-        </p>
+    <div class="grid-4">
+      <div class="card">
+        <i class="fa-solid fa-chalkboard-user card-icon"></i>
+        <h4>Smart Classrooms</h4>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-mosque card-icon"></i>
+        <h4>Prayer Hall / Masjid</h4>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-desktop card-icon"></i>
+        <h4>Computer Lab</h4>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-shield-halved card-icon"></i>
+        <h4>24/7 CCTV & Safety</h4>
       </div>
     </div>
+  </section>
 
-    <!-- 4. WhatsApp Admission Form -->
-    <div class="section-title" id="inquiry-form">
-      <h2>Instant Admission Inquiry</h2>
+  <!-- 9. Student Life -->
+  <section class="section bg-white">
+    <div class="section-header">
+      <h2>Student Life & Extracurriculars</h2>
     </div>
-    <div class="form-card">
-      <form onsubmit="sendToWhatsApp(event)">
-        <input type="text" id="parentName" class="form-control" placeholder="Parent Name" required>
-        <input type="tel" id="parentPhone" class="form-control" placeholder="Parent Mobile Number" required>
-        <input type="text" id="studentName" class="form-control" placeholder="Student Full Name" required>
-        <select id="seekingClass" class="form-control" required>
-          <option value="">-- Select Grade --</option>
-          <option value="LKG">LKG</option>
-          <option value="UKG">UKG</option>
-          <option value="Standard 1">Standard 1</option>
-          <option value="Standard 2">Standard 2</option>
-          <option value="Standard 3">Standard 3</option>
-          <option value="Standard 4">Standard 4</option>
-          <option value="Standard 5">Standard 5</option>
-        </select>
-        <button type="submit" class="btn-whatsapp">
-          <i class="fa-brands fa-whatsapp"></i> Send Application via WhatsApp
-        </button>
-      </form>
+    <div class="grid-3">
+      <div class="card">
+        <i class="fa-solid fa-trophy card-icon"></i>
+        <h4>Qur'an & Islamic Competitions</h4>
+        <p>Annual Hifz, Qirat, Naat, and Islamic Quiz competitions encouraging spiritual excellence.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-futbol"></i></div>
+        <h4>Sports & Fitness</h4>
+        <p>Regular outdoor sports, athletics, team activities, and annual sports day meets.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-bus"></i></div>
+        <h4>Educational Trips</h4>
+        <p>Field trips and educational tours to expand experiential knowledge outside the classroom.</p>
+      </div>
     </div>
+  </section>
 
-  </div>
+  <!-- 10. Gallery & 11. Achievements -->
+  <section class="section">
+    <div class="section-header">
+      <h2>Campus Gallery & Achievements</h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?w=500&auto=format&fit=crop&q=60" alt="Students"></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=500&auto=format&fit=crop&q=60" alt="Classroom"></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1588072432836-e10032774350?w=500&auto=format&fit=crop&q=60" alt="Activity"></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500&auto=format&fit=crop&q=60" alt="Computer Lab"></div>
+    </div>
+  </section>
+
+  <!-- 12. Parents Corner -->
+  <section class="section bg-white">
+    <div class="section-header">
+      <h2>Parents Corner</h2>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <h3><i class="fa-solid fa-bullhorn"></i> Important Notices</h3>
+        <p style="margin-top: 10px;">Check routine updates, exam schedules, and circulars directly from the administration office.</p>
+      </div>
+      <div class="card">
+        <h3><i class="fa-solid fa-credit-card"></i> Fee Payment Info</h3>
+        <p style="margin-top: 10px;">Pay school fees via UPI (<strong>9600306532@upi</strong>) and share receipts directly to the office WhatsApp number.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13. Contact Us -->
+  <section class="section" id="contact">
+    <div class="section-header">
+      <h2>Contact Us</h2>
+      <p>Get in touch with our administration office</p>
+    </div>
+    <div class="grid-2">
+      <div>
+        <h3>Reach Out Directly</h3>
+        <p style="margin-top: 15px;"><i class="fa-solid fa-location-dot" style="color: var(--secondary);"></i> Puliangudi, Tenkasi District, Tamil Nadu</p>
+        <p style="margin-top: 10px;"><i class="fa-solid fa-phone" style="color: var(--secondary);"></i> +91 9600306532</p>
+        <p style="margin-top: 10px;"><i class="fa-solid fa-envelope" style="color: var(--secondary);"></i> rafiqraja532@gmail.com</p>
+        <p style="margin-top: 10px;"><i class="fa-solid fa-clock" style="color: var(--secondary);"></i> Office Hours: Mon - Sat (8:30 AM - 4:00 PM)</p>
+      </div>
+      <div class="card">
+        <h3>Send a Message</h3>
+        <form onsubmit="handleFormSubmit(event)">
+          <div class="form-group">
+            <input type="text" placeholder="Your Name" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <input type="email" placeholder="Your Email" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <textarea placeholder="Your Message" class="form-control" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-secondary" style="width: 100%;">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
 
   <!-- Floating WhatsApp Button -->
-  <a href="https://wa.me/919600306532" class="whatsapp-btn" target="_blank">
+  <a href="https://wa.me/919600306532" class="whatsapp-float" target="_blank">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
   <!-- Footer -->
   <footer>
-    <p><strong>Welldone Nursery & Primary Islamic School</strong></p>
-    <p>Puliangudi, Tamil Nadu | Contact: 9600306532</p>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>Welldone Group of Schools</h3>
+        <p>Dedicated to delivering high-caliber modern education grounded in Islamic values and ethics.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#deen">Deen Program</a></li>
+          <li><a href="#duniya">Academic Program</a></li>
+          <li><a href="#admissions">Admissions</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Contact Info</h3>
+        <p>Puliangudi, Tamil Nadu</p>
+        <p>Phone: +91 9600306532</p>
+        <p>Email: rafiqraja532@gmail.com</p>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2026 Welldone Nursery & Primary School & TMS Welldone Matriculation School. All Rights Reserved.</p>
+    </div>
   </footer>
 
-  <!-- Embedded JavaScript -->
   <script>
-    function showClassHomework() {
-      var selectedClass = document.getElementById("classSelect").value;
-      var hwBoxes = document.getElementsByClassName("hw-box");
-      for (var i = 0; i < hwBoxes.length; i++) {
-        hwBoxes[i].classList.remove("active");
-      }
-      document.getElementById(selectedClass).classList.add("active");
-    }
-
-    function sendToWhatsApp(e) {
+    function handleFormSubmit(e) {
       e.preventDefault();
-      var message = "*NEW ADMISSION APPLICATION*%0A" +
-                    "Parent: " + encodeURIComponent(document.getElementById('parentName').value) + "%0A" +
-                    "Phone: " + encodeURIComponent(document.getElementById('parentPhone').value) + "%0A" +
-                    "Student: " + encodeURIComponent(document.getElementById('studentName').value) + "%0A" +
-                    "Grade: " + encodeURIComponent(document.getElementById('seekingClass').value);
-      window.open("https://wa.me/919600306532?text=" + message, '_blank');
+      var parent = document.getElementById('parent') ? document.getElementById('parent').value : 'Inquirer';
+      var phone = document.getElementById('phone') ? document.getElementById('phone').value : '';
+      var student = document.getElementById('student') ? document.getElementById('student').value : '';
+      var school = document.getElementById('school') ? document.getElementById('school').value : '';
+      
+      var msg = "*SCHOOL ADMISSION ENQUIRY*%0A" +
+                "Parent Name: " + encodeURIComponent(parent) + "%0A" +
+                "Phone: " + encodeURIComponent(phone) + "%0A" +
+                "Student: " + encodeURIComponent(student) + "%0A" +
+                "Target School: " + encodeURIComponent(school);
+                
+      window.open("https://wa.me/919600306532?text=" + msg, '_blank');
     }
   </script>
 
