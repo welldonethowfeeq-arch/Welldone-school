@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welldone Nursery & Primary Islamic School | Official Website</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <title>Welldone Nursery & Primary Islamic School</title>
   <style>
     :root {
       --primary: #0d3b66;
@@ -15,74 +14,76 @@
       --success: #25d366;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
     body { background-color: #f4f7f6; color: #333; line-height: 1.6; }
 
-    /* Header & Navigation */
-    header { background: var(--white); padding: 15px 20px; box-shadow: 0 2px 15px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; }
-    .logo { display: flex; align-items: center; gap: 12px; }
-    .logo-icon { width: 45px; height: 45px; background: var(--primary); color: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: bold; border: 2px solid var(--secondary); }
-    .logo-text h1 { font-size: 1.2rem; color: var(--primary); font-weight: 700; }
-    .logo-text p { font-size: 0.75rem; color: #666; font-weight: 600; }
+    /* Top Header */
+    .top-bar { background: var(--dark); color: #fff; padding: 8px 15px; font-size: 0.85rem; display: flex; justify-content: space-between; align-items: center; }
+    .top-bar a { color: var(--secondary); text-decoration: none; font-weight: bold; }
+    header { background: var(--white); padding: 15px 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-align: center; }
+    header h1 { color: var(--primary); font-size: 1.4rem; }
+    header p { font-size: 0.8rem; color: #666; font-weight: bold; }
 
-    /* Hero Banner */
-    .hero { background: linear-gradient(rgba(13, 59, 102, 0.88), rgba(0, 31, 63, 0.92)), url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1200&auto=format&fit=crop&q=80') center/cover no-repeat; color: var(--white); text-align: center; padding: 50px 20px; }
-    .hero h2 { font-size: 1.8rem; margin-bottom: 10px; }
+    .hero { background: var(--primary); color: var(--white); text-align: center; padding: 35px 20px; }
+    .hero h2 { font-size: 1.5rem; margin-bottom: 8px; color: var(--secondary); }
 
-    .container { max-width: 900px; margin: auto; padding: 20px 15px; }
-    .section-title { text-align: center; margin: 25px 0 15px 0; }
-    .section-title h2 { color: var(--primary); font-size: 1.5rem; }
+    .container { max-width: 800px; margin: auto; padding: 20px 15px; }
+    .section-title { text-align: center; margin: 25px 0 12px 0; color: var(--primary); }
 
-    /* Homework Section */
-    .hw-card { background: var(--white); border-radius: 15px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); margin-bottom: 30px; border-top: 5px solid var(--primary); }
-    .hw-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; flex-wrap: wrap; }
-    .class-selector, .form-control { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 0.95rem; outline: none; margin-bottom: 12px; }
-    
-    .hw-list { list-style: none; margin-top: 15px; }
-    .hw-item { padding: 12px; border-bottom: 1px dashed #ddd; background: #f9f9f9; border-radius: 8px; margin-bottom: 8px; }
-    .hw-subject { font-weight: bold; color: var(--accent); }
+    /* Cards */
+    .card { background: var(--white); border-radius: 12px; padding: 18px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); margin-bottom: 25px; }
+    .card-hw { border-top: 5px solid var(--accent); }
+    .card-routine { border-top: 5px solid var(--primary); }
+    .card-fee { border-top: 5px solid var(--secondary); }
+    .card-form { border-top: 5px solid var(--success); }
 
-    /* Admin Box */
-    .admin-toggle-btn { background: var(--dark); color: #fff; padding: 8px 16px; border-radius: 20px; border: none; font-size: 0.85rem; cursor: pointer; font-weight: bold; }
-    .admin-box { display: none; background: #edf2f7; padding: 20px; border-radius: 12px; margin-top: 20px; border: 2px dashed var(--primary); }
-    .admin-box.active { display: block; }
-    .btn-submit { background: var(--primary); color: #fff; padding: 12px 20px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; width: 100%; }
+    /* Homework Portal */
+    .class-selector { width: 100%; padding: 10px; border: 2px solid var(--primary); border-radius: 8px; font-size: 0.95rem; font-weight: bold; color: var(--primary); margin-bottom: 12px; background: #fff; }
+    .hw-box { display: none; background: #fafafa; border: 1px solid #ddd; border-radius: 8px; padding: 12px; }
+    .hw-box.active { display: block; }
+    .hw-list { list-style: none; }
+    .hw-list li { padding: 6px 0; border-bottom: 1px dashed #ccc; font-size: 0.9rem; }
 
-    /* WhatsApp Admission Form */
-    .form-card { background: var(--white); padding: 25px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 30px; border-top: 5px solid var(--success); }
-    .btn-whatsapp { background: var(--success); color: var(--white); width: 100%; padding: 12px; border: none; border-radius: 30px; font-weight: bold; font-size: 1rem; cursor: pointer; }
+    /* Timings */
+    .routine-item { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #eee; font-size: 0.9rem; }
+    .time-badge { background: #eef4fb; color: var(--primary); font-weight: bold; padding: 2px 8px; border-radius: 10px; font-size: 0.8rem; }
 
-    footer { background: var(--dark); color: #aaa; text-align: center; padding: 25px 20px; font-size: 0.85rem; margin-top: 30px; }
+    /* Fee Table */
+    .fee-table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 0.85rem; }
+    .fee-table th, .fee-table td { padding: 10px; text-align: left; border-bottom: 1px solid #eee; }
+    .fee-table th { background: #f8f9fa; color: var(--primary); }
+
+    /* WhatsApp Form */
+    .form-control { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; font-size: 0.9rem; margin-bottom: 10px; }
+    .btn-whatsapp { background: var(--success); color: var(--white); width: 100%; padding: 12px; border: none; border-radius: 20px; font-weight: bold; font-size: 0.95rem; cursor: pointer; }
+
+    footer { background: var(--dark); color: #aaa; text-align: center; padding: 20px; font-size: 0.8rem; margin-top: 20px; }
   </style>
 </head>
 <body>
 
+  <div class="top-bar">
+    <span>Welldone School | Puliangudi</span>
+    <a href="tel:9600306532">📞 9600306532</a>
+  </div>
+
   <header>
-    <div class="logo">
-      <div class="logo-icon">WD</div>
-      <div class="logo-text">
-        <h1>Welldone School</h1>
-        <p>DEEN & DUNYA TOGETHER</p>
-      </div>
-    </div>
+    <h1>Welldone Nursery & Primary Islamic School</h1>
+    <p>DEEN & DUNYA TOGETHER</p>
   </header>
 
   <section class="hero">
-    <h2>Welldone Nursery & Primary School</h2>
-    <p>Official Daily Homework & Inquiry Portal</p>
+    <h2>Nurturing Faith, Knowledge & Excellence</h2>
+    <p>Comprehensive education with Islamic values.</p>
   </section>
 
   <div class="container">
 
-    <!-- Homework Viewer -->
-    <div class="hw-card">
-      <div class="hw-header">
-        <h3><i class="fa-solid fa-book-open"></i> Student Homework Viewer</h3>
-        <button class="admin-toggle-btn" onclick="toggleAdminPanel()"><i class="fa-solid fa-lock"></i> Teacher Login</button>
-      </div>
-
-      <label style="font-weight:600; font-size:0.85rem;">Select Student Class:</label>
-      <select id="classViewSelect" class="class-selector" onchange="fetchHomework()">
+    <!-- Homework Section -->
+    <h3 class="section-title">Daily Homework Portal</h3>
+    <div class="card card-hw">
+      <label style="font-weight: bold; font-size: 0.85rem; display: block; margin-bottom: 5px;">Select Class:</label>
+      <select id="classSelect" class="class-selector" onchange="showHomework()">
         <option value="std1">Standard 1</option>
         <option value="std2">Standard 2</option>
         <option value="std3">Standard 3</option>
@@ -90,52 +91,116 @@
         <option value="std5">Standard 5</option>
       </select>
 
-      <ul id="homeworkContainer" class="hw-list">
-        <li class="hw-item">Loading today's homework...</li>
-      </ul>
+      <div id="std1" class="hw-box active">
+        <h4 style="color:var(--primary);">Standard 1</h4>
+        <ul class="hw-list">
+          <li><strong>English:</strong> Write A to Z twice in notebook.</li>
+          <li><strong>Math:</strong> Practice numbers 1 to 50.</li>
+        </ul>
+      </div>
 
-      <!-- Secret Admin Panel (Password Protected) -->
-      <div id="adminPanel" class="admin-box">
-        <h4 style="margin-bottom: 12px; color: var(--primary);"><i class="fa-solid fa-user-shield"></i> Post Daily Homework (Admin Only)</h4>
-        
-        <input type="password" id="adminPassword" class="form-control" placeholder="Enter Secret Admin Password" required>
-        
-        <label style="font-weight:600; font-size:0.85rem;">Select Class to Update:</label>
-        <select id="adminClass" class="form-control">
-          <option value="std1">Standard 1</option>
-          <option value="std2">Standard 2</option>
-          <option value="std3">Standard 3</option>
-          <option value="std4">Standard 4</option>
-          <option value="std5">Standard 5</option>
-        </select>
+      <div id="std2" class="hw-box">
+        <h4 style="color:var(--primary);">Standard 2</h4>
+        <ul class="hw-list">
+          <li><strong>English:</strong> Read Lesson 3.</li>
+          <li><strong>Math:</strong> Page 24 addition exercise.</li>
+        </ul>
+      </div>
 
-        <input type="text" id="adminSubject" class="form-control" placeholder="Subject Name (e.g. English, Math, Deeniyath)" required>
-        <textarea id="adminHomework" class="form-control" rows="3" placeholder="Type the homework details here..." required></textarea>
+      <div id="std3" class="hw-box">
+        <h4 style="color:var(--primary);">Standard 3</h4>
+        <ul class="hw-list">
+          <li><strong>Science:</strong> Draw a plant diagram.</li>
+        </ul>
+      </div>
 
-        <button type="button" class="btn-submit" onclick="postHomework()"><i class="fa-solid fa-paper-plane"></i> Publish Homework Live</button>
+      <div id="std4" class="hw-box">
+        <h4 style="color:var(--primary);">Standard 4</h4>
+        <ul class="hw-list">
+          <li><strong>Social:</strong> Read Chapter 2.</li>
+        </ul>
+      </div>
+
+      <div id="std5" class="hw-box">
+        <h4 style="color:var(--primary);">Standard 5</h4>
+        <ul class="hw-list">
+          <li><strong>English:</strong> Write an essay on "My School".</li>
+        </ul>
       </div>
     </div>
 
-    <!-- WhatsApp Admission Form -->
-    <div class="section-title">
-      <h2>Instant Admission Inquiry</h2>
+    <!-- School Timings -->
+    <h3 class="section-title">School Timings</h3>
+    <div class="card card-routine">
+      <div class="routine-item">
+        <span>📖 Assembly & Quran Recitation</span>
+        <span class="time-badge">09:00 AM - 09:30 AM</span>
+      </div>
+      <div class="routine-item">
+        <span>🎓 Academic Classes</span>
+        <span class="time-badge">09:30 AM - 12:30 PM</span>
+      </div>
+      <div class="routine-item">
+        <span>🍱 Lunch & Zuhr Prayer</span>
+        <span class="time-badge">12:30 PM - 01:30 PM</span>
+      </div>
+      <div class="routine-item">
+        <span>🕌 Deeniyath Studies</span>
+        <span class="time-badge">01:30 PM - 03:00 PM</span>
+      </div>
     </div>
-    <div class="form-card">
-      <form onsubmit="sendToWhatsApp(event)">
-        <input type="text" id="parentName" class="form-control" placeholder="Parent / Guardian Name" required>
-        <input type="tel" id="parentPhone" class="form-control" placeholder="WhatsApp Phone Number" required>
-        <input type="text" id="studentName" class="form-control" placeholder="Student Full Name" required>
-        <select id="seekingClass" class="form-control" required>
-          <option value="">-- Select Grade --</option>
+
+    <!-- Fee Structure -->
+    <h3 class="section-title">Fee Structure</h3>
+    <div class="card card-fee">
+      <table class="fee-table">
+        <thead>
+          <tr>
+            <th>Class</th>
+            <th>Term 1</th>
+            <th>Term 2</th>
+            <th>Term 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>LKG & UKG</strong></td>
+            <td>₹3,500</td>
+            <td>₹3,500</td>
+            <td>₹3,000</td>
+          </tr>
+          <tr>
+            <td><strong>Standard 1 to 3</strong></td>
+            <td>₹4,000</td>
+            <td>₹4,000</td>
+            <td>₹3,500</td>
+          </tr>
+          <tr>
+            <td><strong>Standard 4 & 5</strong></td>
+            <td>₹4,500</td>
+            <td>₹4,500</td>
+            <td>₹4,000</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Admission Form -->
+    <h3 class="section-title">Admission Inquiry</h3>
+    <div class="card card-form">
+      <form onsubmit="sendWhatsApp(event)">
+        <input type="text" id="pName" class="form-control" placeholder="Parent Name" required>
+        <input type="tel" id="pPhone" class="form-control" placeholder="Mobile Number" required>
+        <input type="text" id="sName" class="form-control" placeholder="Student Name" required>
+        <select id="sClass" class="form-control" required>
+          <option value="">Select Class</option>
           <option value="LKG">LKG</option>
           <option value="UKG">UKG</option>
           <option value="Standard 1">Standard 1</option>
           <option value="Standard 2">Standard 2</option>
           <option value="Standard 3">Standard 3</option>
         </select>
-        <button type="submit" class="btn-whatsapp">
-          <i class="fa-brands fa-whatsapp"></i> Send Application via WhatsApp
-        </button>
+        <button type="submit" class="btn-whatsapp">Send Application via WhatsApp</button>
       </form>
     </div>
 
@@ -143,136 +208,29 @@
 
   <footer>
     <p><strong>Welldone Nursery & Primary Islamic School</strong></p>
-    <p>Puliangudi, Tamil Nadu | Contact: 9600306532</p>
+    <p>Puliangudi | Contact: 9600306532</p>
   </footer>
 
   <script>
-    // PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL HERE
-    var GOOGLE_SCRIPT_URL = "YOUR_GOOGLE_APPS_SCRIPT_URL_HERE";
-
-    function toggleAdminPanel() {
-      var panel = document.getElementById("adminPanel");
-      panel.classList.toggle("active");
-    }
-
-    // Fetch Homework live from Google Sheet database
-    function fetchHomework() {
-      var selectedClass = document.getElementById("classViewSelect").value;
-      var container = document.getElementById("homeworkContainer");
-      container.innerHTML = '<li class="hw-item">Loading homework...</li>';
-
-      fetch(GOOGLE_SCRIPT_URL)
-        .then(response => response.json())
-        .then(data => {
-          var classData = data.filter(item => item.class === selectedClass);
-          if (classData.length === 0) {
-            container.innerHTML = '<li class="hw-item">No homework posted for this class today.</li>';
-          } else {
-            container.innerHTML = '';
-            classData.forEach(item => {
-              container.innerHTML += `
-                <li class="hw-item">
-                  <div class="hw-subject"><i class="fa-solid fa-book-bookmark"></i> ${item.subject}</div>
-                  <div>${item.homework}</div>
-                </li>
-              `;
-            });
-          }
-        })
-        .catch(err => {
-          container.innerHTML = '<li class="hw-item">Set up your Google Script URL to view live database homework.</li>';
-        });
-    }
-
-    // Post new homework directly from the website
-    function postHomework() {
-      var pwd = document.getElementById("adminPassword").value;
-      var cls = document.getElementById("adminClass").value;
-      var subj = document.getElementById("adminSubject").value;
-      var hw = document.getElementById("adminHomework").value;
-
-      if (!pwd || !subj || !hw) {
-        alert("Please fill in all fields including your password.");
-        return;
+    function showHomework() {
+      var selected = document.getElementById("classSelect").value;
+      var boxes = document.getElementsByClassName("hw-box");
+      for (var i = 0; i < boxes.length; i++) {
+        boxes[i].classList.remove("active");
       }
-
-      var payload = {
-        password: pwd,
-        class: cls,
-        subject: subj,
-        homework: hw
-      };
-
-      fetch(GOOGLE_SCRIPT_URL, {
-        method: "POST",
-        body: JSON.stringify(payload)
-      })
-      .then(res => res.json())
-      .then(data => {
-        if (data.status === "success") {
-          alert("Homework posted successfully!");
-          document.getElementById("adminSubject").value = "";
-          document.getElementById("adminHomework").value = "";
-          fetchHomework();
-        } else {
-          alert("Error: " + data.message);
-        }
-      });
+      document.getElementById(selected).classList.add("active");
     }
 
-    function sendToWhatsApp(e) {
+    function sendWhatsApp(e) {
       e.preventDefault();
-      var message = "*ADMISSION INQUIRY*%0A" +
-                    "Parent: " + encodeURIComponent(document.getElementById('parentName').value) + "%0A" +
-                    "Phone: " + encodeURIComponent(document.getElementById('parentPhone').value) + "%0A" +
-                    "Student: " + encodeURIComponent(document.getElementById('studentName').value) + "%0A" +
-                    "Grade: " + encodeURIComponent(document.getElementById('seekingClass').value);
-      window.open("https://wa.me/919600306532?text=" + message, '_blank');
+      var msg = "ADMISSION INQUIRY%0A" +
+                "Parent: " + encodeURIComponent(document.getElementById('pName').value) + "%0A" +
+                "Phone: " + encodeURIComponent(document.getElementById('pPhone').value) + "%0A" +
+                "Student: " + encodeURIComponent(document.getElementById('sName').value) + "%0A" +
+                "Class: " + encodeURIComponent(document.getElementById('sClass').value);
+      window.open("https://wa.me/919600306532?text=" + msg, '_blank');
     }
-
-    // Load homework on page launch
-    fetchHomework();
   </script>
-
-</body>
-</html>
-
-    <!-- Admission Inquiry Form -->
-    <div class="section-title" id="inquiry-form">
-      <h2>Admission Inquiry (2026-27)</h2>
-    </div>
-    <div class="form-card">
-      <form action="https://formspree.io/f/xbjnqpkz" method="POST">
-        <div class="form-group">
-          <label>Parent / Guardian Name</label>
-          <input type="text" name="parent_name" class="form-control" placeholder="Enter full name" required>
-        </div>
-        <div class="form-group">
-          <label>Mobile / WhatsApp Number</label>
-          <input type="tel" name="phone_number" class="form-control" placeholder="Enter mobile number" required>
-        </div>
-        <div class="form-group">
-          <label>Student Name & Seeking Grade</label>
-          <input type="text" name="student_details" class="form-control" placeholder="e.g., Mohamed - Standard 3" required>
-        </div>
-        <button type="submit" class="btn btn-primary" style="width: 100%; border: none; cursor: pointer; justify-content: center;"><i class="fa-solid fa-paper-plane"></i> Submit Admission Inquiry</button>
-      </form>
-    </div>
-
-  </div>
-
-  <!-- Floating WhatsApp Action -->
-  <a href="https://wa.me/919600306532" class="whatsapp-btn" target="_blank" aria-label="WhatsApp Chat">
-    <i class="fa-brands fa-whatsapp"></i>
-  </a>
-
-  <!-- Footer -->
-  <footer>
-    <p><strong>Welldone Nursery & Primary Islamic School</strong></p>
-    <p>Puliangudi, Tamil Nadu</p>
-    <p>Phone: <a href="tel:9600306532">9600306532</a> | Email: <a href="mailto:rafiqraja532@gmail.com">rafiqraja532@gmail.com</a></p>
-    <p style="margin-top: 15px; font-size: 0.75rem;">&copy; 2026 Welldone School. All rights reserved.</p>
-  </footer>
 
 </body>
 </html>
