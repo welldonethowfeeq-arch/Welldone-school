@@ -1,961 +1,299 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Al-Noor Academy | Nurturing Faith, Knowledge & Future Leaders</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        emerald: {
-                            850: '#064e3b',
-                            900: '#022c22',
-                        },
-                        amber: {
-                            450: '#f59e0b',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                        quran: ['Amiri', 'serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        .hero-pattern {
-            background-color: #022c22;
-            background-image: radial-gradient(#10b981 0.75px, transparent 0.75px), radial-gradient(#10b981 0.75px, #022c22 0.75px);
-            background-size: 30px 30px;
-            background-position: 0 0,15px 15px;
-            background-opacity: 0.1;
-        }
-        .islamic-pattern {
-            background-color: #ffffff;
-            background-image: radial-gradient(#059669 0.5px, #ffffff 0.5px);
-            background-size: 20px 20px;
-        }
-    </style>
-</head>
-<body class="font-sans text-slate-800 bg-slate-50 antialiased selection:bg-emerald-500 selection:text-white">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welldone Nursery & Primary Islamic School | Official Website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    :root {
+      --primary: #0d3b66;
+      --secondary: #f4d35e;
+      --accent: #e76f51;
+      --dark: #1d3557;
+      --white: #ffffff;
+      --success: #25d366;
+    }
 
-    <!-- Top Announcement Bar -->
-    <div class="bg-emerald-900 text-slate-200 text-xs sm:text-sm py-2 px-4">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
-            <div class="flex items-center gap-4">
-                <span><i class="fa-solid fa-phone text-amber-400 mr-1.5"></i> +1 (555) 019-2834</span>
-                <span class="hidden md:inline"><i class="fa-solid fa-envelope text-amber-400 mr-1.5"></i> admissions@alnooracademy.edu</span>
-            </div>
-            <div class="flex items-center gap-3">
-                <span class="bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded border border-amber-500/30 text-xs font-semibold">Admissions Open 2026-2027</span>
-                <a href="#admissions" class="underline hover:text-amber-300 font-medium transition">Apply Now</a>
-            </div>
-        </div>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
+    body { background-color: #f4f7f6; color: #333; line-height: 1.6; }
+
+    /* Top Bar & Header */
+    .top-bar { background: var(--dark); color: #fff; padding: 8px 15px; font-size: 0.85rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+    .top-bar a { color: var(--secondary); text-decoration: none; font-weight: 600; }
+    header { background: var(--white); padding: 15px 20px; box-shadow: 0 2px 15px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; }
+    .logo { display: flex; align-items: center; gap: 12px; }
+    .logo-icon { width: 45px; height: 45px; background: var(--primary); color: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: bold; border: 2px solid var(--secondary); }
+    .logo-text h1 { font-size: 1.2rem; color: var(--primary); font-weight: 700; }
+    .logo-text p { font-size: 0.75rem; color: #666; font-weight: 600; }
+
+    /* Hero Banner */
+    .hero { background: linear-gradient(rgba(13, 59, 102, 0.88), rgba(0, 31, 63, 0.92)), url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1200&auto=format&fit=crop&q=80') center/cover no-repeat; color: var(--white); text-align: center; padding: 50px 20px; }
+    .hero h2 { font-size: 1.8rem; margin-bottom: 10px; }
+    .btn-group { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 15px; }
+    .btn { padding: 10px 20px; border-radius: 25px; text-decoration: none; font-weight: bold; font-size: 0.9rem; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
+    .btn-primary { background: var(--secondary); color: var(--primary); }
+    .btn-homework { background: var(--accent); color: var(--white); }
+
+    .container { max-width: 900px; margin: auto; padding: 20px 15px; }
+    .section-title { text-align: center; margin: 30px 0 15px 0; }
+    .section-title h2 { color: var(--primary); font-size: 1.5rem; }
+
+    /* Homework Section */
+    .hw-card { background: var(--white); border-radius: 15px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); margin-bottom: 30px; border-top: 5px solid var(--accent); }
+    .class-selector { width: 100%; padding: 12px; border: 2px solid var(--primary); border-radius: 8px; font-size: 0.95rem; font-weight: bold; color: var(--primary); outline: none; margin-bottom: 15px; background: #fff; }
+    .hw-box { display: none; background: #fafafa; border: 1px solid #e0e0e0; border-radius: 8px; padding: 15px; }
+    .hw-box.active { display: block; }
+    .hw-list { list-style: none; }
+    .hw-list li { padding: 8px 0; border-bottom: 1px dashed #ddd; font-size: 0.9rem; }
+
+    /* School Timings & Daily Routine */
+    .routine-card { background: var(--white); padding: 20px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 30px; border-top: 5px solid var(--primary); }
+    .routine-list { list-style: none; margin-top: 10px; }
+    .routine-item { display: flex; justify-content: space-between; align-items: center; padding: 12px 10px; border-bottom: 1px solid #eee; flex-wrap: wrap; gap: 8px; font-size: 0.9rem; }
+    .routine-item:last-child { border-bottom: none; }
+    .time-badge { background: #eef4fb; color: var(--primary); font-weight: 700; padding: 4px 12px; border-radius: 15px; font-size: 0.85rem; }
+
+    /* Fee Table & Online Payment Box */
+    .fee-card { background: var(--white); padding: 20px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 30px; border-top: 5px solid var(--secondary); }
+    .fee-table { width: 100%; border-collapse: collapse; margin-top: 10px; margin-bottom: 20px; font-size: 0.9rem; }
+    .fee-table th, .fee-table td { padding: 12px 10px; text-align: left; border-bottom: 1px solid #eee; }
+    .fee-table th { background: #f8f9fa; color: var(--primary); font-weight: 700; }
+    
+    .payment-box { background: #fdfbf7; border: 2px dashed var(--secondary); border-radius: 12px; padding: 18px; text-align: center; }
+    .upi-id { background: var(--white); border: 1px solid #ddd; padding: 8px 15px; border-radius: 20px; font-weight: 700; color: var(--dark); display: inline-block; margin: 10px 0; font-size: 1rem; }
+
+    /* WhatsApp Admission Form & Floating Button */
+    .form-card { background: var(--white); padding: 20px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 30px; border-top: 5px solid var(--success); }
+    .form-control { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; font-size: 0.9rem; margin-bottom: 12px; }
+    .btn-whatsapp { background: var(--success); color: var(--white); width: 100%; padding: 12px; border: none; border-radius: 25px; font-weight: bold; cursor: pointer; font-size: 0.95rem; }
+
+    .whatsapp-btn { position: fixed; bottom: 20px; right: 20px; background: var(--success); color: var(--white); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 26px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 1000; text-decoration: none; }
+    footer { background: var(--dark); color: #aaa; text-align: center; padding: 25px 20px; font-size: 0.85rem; margin-top: 30px; }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <span>📢 Welldone School | Admissions Open 2026</span>
+    <a href="tel:9600306532"><i class="fa-solid fa-phone"></i> 9600306532</a>
+  </div>
+
+  <!-- Main Header -->
+  <header>
+    <div class="logo">
+      <div class="logo-icon">WD</div>
+      <div class="logo-text">
+        <h1>Welldone School</h1>
+        <p>DEEN & DUNYA TOGETHER</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="hero">
+    <h2>Nurturing Faith, Knowledge & Excellence</h2>
+    <p>Providing holistic education integrated with Islamic values in Puliangudi.</p>
+    <div class="btn-group">
+      <a href="#homework-portal" class="btn btn-homework"><i class="fa-solid fa-book-open"></i> Daily Homework</a>
+      <a href="#inquiry-form" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i> Admission Form</a>
+    </div>
+  </section>
+
+  <div class="container">
+
+    <!-- 1. Daily Homework Portal -->
+    <div class="section-title" id="homework-portal">
+      <h2>Daily Student Homework Portal</h2>
     </div>
 
-    <!-- Main Navigation Header -->
-    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <!-- Brand Logo -->
-                <a href="#" class="flex items-center gap-3">
-                    <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-emerald-800 to-emerald-600 flex items-center justify-center shadow-lg text-amber-400 text-2xl">
-                        <i class="fa-solid fa-mosque"></i>
-                    </div>
-                    <div>
-                        <span class="text-xl font-bold tracking-tight text-emerald-950 block">AL-NOOR ACADEMY</span>
-                        <span class="text-xs text-amber-600 font-medium tracking-wide block uppercase">Excellence in Deen &amp; Duniya</span>
-                    </div>
-                </a>
+    <div class="hw-card">
+      <label style="font-weight: 600; font-size: 0.85rem; margin-bottom: 5px; display: block;">Select Student Class:</label>
+      <select id="classSelect" class="class-selector" onchange="showClassHomework()">
+        <option value="std1">Standard 1</option>
+        <option value="std2">Standard 2</option>
+        <option value="std3">Standard 3</option>
+        <option value="std4">Standard 4</option>
+        <option value="std5">Standard 5</option>
+      </select>
 
-                <!-- Desktop Menu Links -->
-                <div class="hidden lg:flex items-center gap-7 text-sm font-semibold text-slate-700">
-                    <a href="#about" class="hover:text-emerald-700 transition">About</a>
-                    <a href="#deen" class="hover:text-emerald-700 transition">Deen Education</a>
-                    <a href="#duniya" class="hover:text-emerald-700 transition">Academics</a>
-                    <a href="#facilities" class="hover:text-emerald-700 transition">Facilities</a>
-                    <a href="#gallery" class="hover:text-emerald-700 transition">Gallery</a>
-                    <a href="#parents" class="hover:text-emerald-700 transition">Parents Corner</a>
-                    <a href="#contact" class="hover:text-emerald-700 transition">Contact</a>
-                </div>
+      <div id="std1" class="hw-box active">
+        <h4 style="color:var(--primary); margin-bottom:8px;">Standard 1 Homework</h4>
+        <ul class="hw-list">
+          <li><strong>English:</strong> Write A to Z two times in notebook.</li>
+          <li><strong>Math:</strong> Learn numbers 1 to 50.</li>
+        </ul>
+      </div>
 
-                <!-- Action Button -->
-                <div class="hidden lg:flex items-center gap-3">
-                    <a href="#admissions" class="bg-emerald-700 hover:bg-emerald-800 text-white px-5 py-2.5 rounded-xl font-semibold shadow-md hover:shadow-lg transition-all duration-200 text-sm">
-                        Admissions
-                    </a>
-                </div>
+      <div id="std2" class="hw-box">
+        <h4 style="color:var(--primary); margin-bottom:8px;">Standard 2 Homework</h4>
+        <ul class="hw-list">
+          <li><strong>English:</strong> Read Lesson 3 aloud.</li>
+          <li><strong>Math:</strong> Practice page 24 addition sums.</li>
+        </ul>
+      </div>
 
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="lg:hidden text-slate-700 focus:outline-none p-2">
-                    <i class="fa-solid fa-bars text-2xl"></i>
-                </button>
-            </div>
-        </nav>
+      <div id="std3" class="hw-box">
+        <h4 style="color:var(--primary); margin-bottom:8px;">Standard 3 Homework</h4>
+        <ul class="hw-list">
+          <li><strong>Science:</strong> Draw a plant diagram in your notebook.</li>
+        </ul>
+      </div>
+
+      <div id="std4" class="hw-box">
+        <h4 style="color:var(--primary); margin-bottom:8px;">Standard 4 Homework</h4>
+        <ul class="hw-list">
+          <li><strong>Social:</strong> Read Chapter 2 and complete question 1.</li>
+        </ul>
+      </div>
+
+      <div id="std5" class="hw-box">
+        <h4 style="color:var(--primary); margin-bottom:8px;">Standard 5 Homework</h4>
+        <ul class="hw-list">
+          <li><strong>English:</strong> Write a short essay on "My School".</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 2. School Timings & Daily Routine -->
+    <div class="section-title">
+      <h2>School Timings & Daily Routine</h2>
+    </div>
+    <div class="routine-card">
+      <ul class="routine-list">
+        <li class="routine-item">
+          <span><i class="fa-solid fa-quran" style="color: var(--accent);"></i> Morning Assembly & Quran Recitation</span>
+          <span class="time-badge">09:00 AM - 09:30 AM</span>
+        </li>
+        <li class="routine-item">
+          <span><i class="fa-solid fa-graduation-cap" style="color: var(--primary);"></i> Academic Sessions (Core Subjects)</span>
+          <span class="time-badge">09:30 AM - 12:30 PM</span>
+        </li>
+        <li class="routine-item">
+          <span><i class="fa-solid fa-utensils" style="color: var(--secondary);"></i> Lunch Break & Zuhr Prayer</span>
+          <span class="time-badge">12:30 PM - 01:30 PM</span>
+        </li>
+        <li class="routine-item">
+          <span><i class="fa-solid fa-book-quran" style="color: var(--accent);"></i> Deeniyath & Islamic Studies</span>
+          <span class="time-badge">01:30 PM - 03:00 PM</span>
+        </li>
+        <li class="routine-item">
+          <span><i class="fa-solid fa-child" style="color: var(--primary);"></i> Activity Class & School Dispersal</span>
+          <span class="time-badge">03:00 PM - 03:30 PM</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 3. Fee Structure & Bank Payment Info -->
+    <div class="section-title">
+      <h2>Fee Structure & Online Payment</h2>
+    </div>
+    <div class="fee-card">
+      <table class="fee-table">
+        <thead>
+          <tr>
+            <th>Class / Grade</th>
+            <th>Term 1 Fee</th>
+            <th>Term 2 Fee</th>
+            <th>Term 3 Fee</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>LKG & UKG</strong></td>
+            <td>₹3,500</td>
+            <td>₹3,500</td>
+            <td>₹3,000</td>
+          </tr>
+          <tr>
+            <td><strong>Standard 1 to 3</strong></td>
+            <td>₹4,000</td>
+            <td>₹4,000</td>
+            <td>₹3,500</td>
+          </tr>
+          <tr>
+            <td><strong>Standard 4 & 5</strong></td>
+            <td>₹4,500</td>
+            <td>₹4,500</td>
+            <td>₹4,000</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Bank & UPI Payment Box -->
+      <div class="payment-box">
+        <h4 style="color: var(--primary); font-size: 1.1rem;"><i class="fa-solid fa-building-columns"></i> Pay School Fees Online</h4>
+        <p style="font-size:0.85rem; color:#666; margin-top:4px;">You can pay fees via GPay, PhonePe, or Paytm:</p>
         
-        <!-- Mobile Dropdown Navigation -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3 font-medium">
-            <a href="#about" class="block py-2 text-slate-700 hover:text-emerald-700 border-b border-slate-50">About</a>
-            <a href="#deen" class="block py-2 text-slate-700 hover:text-emerald-700 border-b border-slate-50">Deen Education</a>
-            <a href="#duniya" class="block py-2 text-slate-700 hover:text-emerald-700 border-b border-slate-50">Academics</a>
-            <a href="#admissions" class="block py-2 text-slate-700 hover:text-emerald-700 border-b border-slate-50">Admissions</a>
-            <a href="#facilities" class="block py-2 text-slate-700 hover:text-emerald-700 border-b border-slate-50">Facilities</a>
-            <a href="#gallery" class="block py-2 text-slate-700 hover:text-emerald-700 border-b border-slate-50">Gallery</a>
-            <a href="#parents" class="block py-2 text-slate-700 hover:text-emerald-700 border-b border-slate-50">Parents Corner</a>
-            <a href="#contact" class="block py-2 text-slate-700 hover:text-emerald-700">Contact</a>
-            <a href="#admissions" class="block text-center bg-emerald-700 text-white py-2.5 rounded-xl font-semibold mt-2">Apply for Admission</a>
-        </div>
-    </header>
+        <div class="upi-id"><i class="fa-solid fa-mobile-screen"></i> UPI ID: 9600306532@upi</div>
+        
+        <p style="font-size:0.8rem; color:#777;">Account Name: Welldone Islamic School</p>
+        <p style="font-size:0.85rem; margin-top:10px; font-weight:bold; color:var(--accent);">
+          ⚠️ Note: After paying online, please send the payment receipt screenshot to <a href="https://wa.me/919600306532" style="color:var(--success); text-decoration:none;">WhatsApp (9600306532)</a> with your child's name and class.
+        </p>
+      </div>
+    </div>
+
+    <!-- 4. WhatsApp Admission Form -->
+    <div class="section-title" id="inquiry-form">
+      <h2>Instant Admission Inquiry</h2>
+    </div>
+    <div class="form-card">
+      <form onsubmit="sendToWhatsApp(event)">
+        <input type="text" id="parentName" class="form-control" placeholder="Parent Name" required>
+        <input type="tel" id="parentPhone" class="form-control" placeholder="Parent Mobile Number" required>
+        <input type="text" id="studentName" class="form-control" placeholder="Student Full Name" required>
+        <select id="seekingClass" class="form-control" required>
+          <option value="">-- Select Grade --</option>
+          <option value="LKG">LKG</option>
+          <option value="UKG">UKG</option>
+          <option value="Standard 1">Standard 1</option>
+          <option value="Standard 2">Standard 2</option>
+          <option value="Standard 3">Standard 3</option>
+          <option value="Standard 4">Standard 4</option>
+          <option value="Standard 5">Standard 5</option>
+        </select>
+        <button type="submit" class="btn-whatsapp">
+          <i class="fa-brands fa-whatsapp"></i> Send Application via WhatsApp
+        </button>
+      </form>
+    </div>
+
+  </div>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/919600306532" class="whatsapp-btn" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Footer -->
+  <footer>
+    <p><strong>Welldone Nursery & Primary Islamic School</strong></p>
+    <p>Puliangudi, Tamil Nadu | Contact: 9600306532</p>
+  </footer>
+
+  <!-- Embedded JavaScript -->
+  <script>
+    function showClassHomework() {
+      var selectedClass = document.getElementById("classSelect").value;
+      var hwBoxes = document.getElementsByClassName("hw-box");
+      for (var i = 0; i < hwBoxes.length; i++) {
+        hwBoxes[i].classList.remove("active");
+      }
+      document.getElementById(selectedClass).classList.add("active");
+    }
+
+    function sendToWhatsApp(e) {
+      e.preventDefault();
+      var message = "*NEW ADMISSION APPLICATION*%0A" +
+                    "Parent: " + encodeURIComponent(document.getElementById('parentName').value) + "%0A" +
+                    "Phone: " + encodeURIComponent(document.getElementById('parentPhone').value) + "%0A" +
+                    "Student: " + encodeURIComponent(document.getElementById('studentName').value) + "%0A" +
+                    "Grade: " + encodeURIComponent(document.getElementById('seekingClass').value);
+      window.open("https://wa.me/919600306532?text=" + message, '_blank');
+    }
+  </script>
 
-    <!-- SECTION 1: HERO SECTION -->
-    <section class="relative bg-emerald-950 text-white py-20 lg:py-32 overflow-hidden hero-pattern">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="space-y-6 text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-800/80 border border-emerald-600/40 text-amber-300 text-xs font-semibold uppercase tracking-wider">
-                        <i class="fa-solid fa-star text-xs"></i> Holistic Islamic &amp; Modern Schooling
-                    </div>
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
-                        Nurturing Faith, Knowledge &amp; <span class="text-amber-400">Future Leaders</span>
-                    </h1>
-                    <p class="text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0">
-                        Integrated Islamic foundation paired with rigorous modern academic standards. Preparing your children for success in this life (Duniya) and the Hereafter (Aakhirah).
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
-                        <a href="#admissions" class="bg-amber-500 hover:bg-amber-600 text-emerald-950 font-bold px-8 py-4 rounded-xl shadow-lg transition transform hover:-translate-y-0.5 text-center">
-                            Admissions 2026
-                        </a>
-                        <a href="#about" class="bg-emerald-900/80 hover:bg-emerald-800 border border-emerald-700 text-white font-semibold px-8 py-4 rounded-xl transition text-center">
-                            Explore About Us
-                        </a>
-                        <a href="#contact" class="bg-transparent border border-white/20 hover:bg-white/10 text-white font-semibold px-6 py-4 rounded-xl transition text-center">
-                            Contact Us
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Hero Image Showcase -->
-                <div class="relative">
-                    <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-amber-400 to-emerald-500 opacity-30 blur-xl"></div>
-                    <div class="relative rounded-2xl overflow-hidden border-4 border-white/10 shadow-2xl bg-slate-800">
-                        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1000&q=80" alt="Students learning in modern classroom" class="w-full h-[420px] object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-emerald-950/80 via-transparent to-transparent"></div>
-                        <div class="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-slate-900/80 backdrop-blur-md border border-white/10">
-                            <p class="text-amber-300 font-quran text-xl">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
-                            <p class="text-xs text-slate-300 mt-1">"Read! In the name of your Lord who created." (Quran 96:1)</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 5: OUR UNIQUE APPROACH (DEEN + DUNIYA HIGHLIGHT) -->
-    <section class="py-16 bg-white border-b border-slate-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <span class="text-emerald-700 font-bold uppercase tracking-wider text-sm">⭐ Our Core Philosophy</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Balanced Deen + Duniya Integration</h2>
-                <p class="text-slate-600 mt-4 text-base sm:text-lg">
-                    We prepare students not only for successful careers in this world but also to become responsible, morally strong individuals guided by authentic Islamic values.
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="p-8 rounded-2xl bg-emerald-50 border border-emerald-100 relative overflow-hidden">
-                    <div class="text-4xl text-emerald-700 mb-4"><i class="fa-solid fa-kaaba"></i></div>
-                    <h3 class="text-2xl font-bold text-emerald-950 mb-3">Deen Education</h3>
-                    <p class="text-slate-700 leading-relaxed mb-4">
-                        Rooted in traditional authentic teachings of Qur'an, Tajweed, Prophet's Seerah, and daily Islamic manners (Akhlaq) to anchor their hearts in faith.
-                    </p>
-                    <ul class="space-y-2 text-slate-700 font-medium text-sm">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Daily Hifz and Nazira program</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Character building (Tarbiyah)</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Practical Salah &amp; Islamic ethics</li>
-                    </ul>
-                </div>
-
-                <div class="p-8 rounded-2xl bg-sky-50 border border-sky-100 relative overflow-hidden">
-                    <div class="text-4xl text-sky-700 mb-4"><i class="fa-solid fa-graduation-cap"></i></div>
-                    <h3 class="text-2xl font-bold text-slate-900 mb-3">Duniya / Modern Academics</h3>
-                    <p class="text-slate-700 leading-relaxed mb-4">
-                        State-of-the-art modern STEM curriculum, language proficiency, critical thinking, and technology skills required to excel in global top universities.
-                    </p>
-                    <ul class="space-y-2 text-slate-700 font-medium text-sm">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-600"></i> Advanced Math &amp; Science Labs</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-600"></i> Computer literacy &amp; Coding basics</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-600"></i> Creative thinking &amp; Leadership programs</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 2: ABOUT THE SCHOOL -->
-    <section id="about" class="py-20 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="space-y-6">
-                    <span class="text-emerald-700 font-bold uppercase tracking-wider text-sm">About Al-Noor Academy</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight">
-                        Building Generations of God-Conscious Scholars &amp; Innovators
-                    </h2>
-                    <p class="text-slate-600 leading-relaxed">
-                        Founded in 2010, Al-Noor Academy was established with a singular vision: to bridge the gap between sacred Islamic tradition and modern secular academic excellence.
-                    </p>
-                    
-                    <!-- Vision & Mission Tabs -->
-                    <div class="space-y-4">
-                        <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200">
-                            <h4 class="font-bold text-emerald-900 flex items-center gap-2 text-lg">
-                                <i class="fa-solid fa-eye text-amber-500"></i> Our Vision
-                            </h4>
-                            <p class="text-sm text-slate-600 mt-2">
-                                To be an international model of educational excellence, nurturing well-rounded citizens who lead with integrity, knowledge, and Islamic faith.
-                            </p>
-                        </div>
-                        <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200">
-                            <h4 class="font-bold text-emerald-900 flex items-center gap-2 text-lg">
-                                <i class="fa-solid fa-bullseye text-amber-500"></i> Our Mission
-                            </h4>
-                            <p class="text-sm text-slate-600 mt-2">
-                                To provide an enriching environment that combines rigorous academic standards with authentic Islamic Tarbiyah, encouraging critical thinking, creativity, and moral excellence.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Principal Message Card -->
-                <div class="bg-white p-8 rounded-2xl shadow-xl border border-slate-100 relative">
-                    <div class="flex items-center gap-4 mb-6">
-                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" alt="Principal" class="w-16 h-16 rounded-full object-cover border-2 border-emerald-600">
-                        <div>
-                            <h3 class="font-bold text-slate-900 text-lg">Dr. Aisha Rahman</h3>
-                            <p class="text-xs text-emerald-700 font-semibold">Principal &amp; Executive Director</p>
-                        </div>
-                    </div>
-                    <p class="text-slate-600 italic text-sm leading-relaxed mb-4">
-                        "Assalamu Alaikum. At Al-Noor, we treat every child as an Amanah (trust). Our dedicated educators work relentlessly to ensure children grow spiritually, intellectually, and socially without compromising their Islamic identity."
-                    </p>
-                    <div class="pt-4 border-t border-slate-100 flex justify-between items-center text-xs text-slate-500">
-                        <span><i class="fa-solid fa-award text-amber-500 mr-1"></i> 15+ Years Educational Leadership</span>
-                        <span class="font-semibold text-emerald-800">Al-Noor Leadership</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 3: DEEN EDUCATION 🕌 -->
-    <section id="deen" class="py-20 bg-emerald-900 text-white hero-pattern">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="bg-emerald-800 text-amber-300 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest border border-emerald-700">🕌 Sacred Learning</span>
-                <h2 class="text-3xl sm:text-5xl font-extrabold mt-4">Deen Curriculum</h2>
-                <p class="text-slate-300 mt-4 text-base sm:text-lg">
-                    In-depth Islamic learning structured for young minds to practice and cherish Islam every single day.
-                </p>
-            </div>
-
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-emerald-850/90 border border-emerald-700/50 p-6 rounded-xl hover:border-amber-400 transition">
-                    <div class="w-12 h-12 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-book-quran"></i></div>
-                    <h3 class="font-bold text-xl mb-2">Qur'an &amp; Tajweed</h3>
-                    <p class="text-sm text-slate-300">Correct pronunciation, recitation rules, memorization (Hifz/Nazira), and understanding key verses.</p>
-                </div>
-
-                <div class="bg-emerald-850/90 border border-emerald-700/50 p-6 rounded-xl hover:border-amber-400 transition">
-                    <div class="w-12 h-12 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-hands-praying"></i></div>
-                    <h3 class="font-bold text-xl mb-2">Daily Duas &amp; Prayer</h3>
-                    <p class="text-sm text-slate-300">Practical Salah training, daily Sunnah supplications, and morning/evening Adhkar routines.</p>
-                </div>
-
-                <div class="bg-emerald-850/90 border border-emerald-700/50 p-6 rounded-xl hover:border-amber-400 transition">
-                    <div class="w-12 h-12 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-language"></i></div>
-                    <h3 class="font-bold text-xl mb-2">Arabic Language</h3>
-                    <p class="text-sm text-slate-300">Building fluent Quranic Arabic vocabulary, reading comprehension, and basic conversational skills.</p>
-                </div>
-
-                <div class="bg-emerald-850/90 border border-emerald-700/50 p-6 rounded-xl hover:border-amber-400 transition">
-                    <div class="w-12 h-12 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-heart"></i></div>
-                    <h3 class="font-bold text-xl mb-2">Akhlaq &amp; Character</h3>
-                    <p class="text-sm text-slate-300">Tarbiyah focused on honesty, humility, respect for parents/teachers, and community empathy.</p>
-                </div>
-
-                <div class="bg-emerald-850/90 border border-emerald-700/50 p-6 rounded-xl hover:border-amber-400 transition">
-                    <div class="w-12 h-12 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-[#mosque]"></i></div>
-                    <h3 class="font-bold text-xl mb-2">Seerah &amp; History</h3>
-                    <p class="text-sm text-slate-300">Inspiring stories from the life of Prophet Muhammad ﷺ, the Companions, and Islamic heritage.</p>
-                </div>
-
-                <div class="bg-emerald-850/90 border border-emerald-700/50 p-6 rounded-xl hover:border-amber-400 transition">
-                    <div class="w-12 h-12 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-scale-balanced"></i></div>
-                    <h3 class="font-bold text-xl mb-2">Islamic Studies</h3>
-                    <p class="text-sm text-slate-300">Age-appropriate Fiqh of daily life, Aqeedah (theology), and applying Islamic solutions to modern issues.</p>
-                </div>
-
-                <div class="bg-emerald-850/90 border border-emerald-700/50 p-6 rounded-xl hover:border-amber-400 transition">
-                    <div class="w-12 h-12 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-users text-xl"></i></div>
-                    <h3 class="font-bold text-xl mb-2">Congregational Prayer</h3>
-                    <p class="text-sm text-slate-300">Daily Zuhr prayer in congregation inside our school Masjid with student-led Adhan.</p>
-                </div>
-
-                <div class="bg-emerald-850/90 border border-emerald-700/50 p-6 rounded-xl hover:border-amber-400 transition">
-                    <div class="w-12 h-12 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-award"></i></div>
-                    <h3 class="font-bold text-xl mb-2">Hifz Support Track</h3>
-                    <p class="text-sm text-slate-300">Flexible learning tracks for students aiming to complete Quran memorization alongside academics.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 4 & 7: DUNIYA / ACADEMICS 📚 -->
-    <section id="duniya" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-emerald-700 font-bold uppercase tracking-wider text-sm">📚 Academic Rigor</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Duniya Curriculum &amp; Academics</h2>
-                <p class="text-slate-600 mt-4 text-base sm:text-lg">
-                    Equipping students with modern skills, critical thinking, and international academic standard benchmarks.
-                </p>
-            </div>
-
-            <!-- Subject Grid -->
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
-                    <div class="w-12 h-12 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-calculator"></i></div>
-                    <h3 class="font-bold text-xl text-slate-900 mb-2">Mathematics &amp; Logic</h3>
-                    <p class="text-slate-600 text-sm">Algebra, Geometry, Data Analysis, and real-world mathematical problem-solving skills.</p>
-                </div>
-
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
-                    <div class="w-12 h-12 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-flask"></i></div>
-                    <h3 class="font-bold text-xl text-slate-900 mb-2">Science &amp; Lab Inquiry</h3>
-                    <p class="text-slate-600 text-sm">Physics, Chemistry, Biology, and experiential lab experiments fostering scientific inquiry.</p>
-                </div>
-
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
-                    <div class="w-12 h-12 rounded-lg bg-amber-100 text-amber-600 flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-laptop-code"></i></div>
-                    <h3 class="font-bold text-xl text-slate-900 mb-2">Computer Education &amp; Tech</h3>
-                    <p class="text-slate-600 text-sm">Digital literacy, Python coding, safe web exploration, robotics, and modern tech skills.</p>
-                </div>
-
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
-                    <div class="w-12 h-12 rounded-lg bg-rose-100 text-rose-600 flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-book-open"></i></div>
-                    <h3 class="font-bold text-xl text-slate-900 mb-2">English &amp; Literature</h3>
-                    <p class="text-slate-600 text-sm">Advanced grammar, creative writing, public speaking, and global classical literature.</p>
-                </div>
-
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
-                    <div class="w-12 h-12 rounded-lg bg-teal-100 text-teal-600 flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-globe"></i></div>
-                    <h3 class="font-bold text-xl text-slate-900 mb-2">Social Studies &amp; Geography</h3>
-                    <p class="text-slate-600 text-sm">World history, civics, environmental science, and global cultural awareness.</p>
-                </div>
-
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
-                    <div class="w-12 h-12 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-brain"></i></div>
-                    <h3 class="font-bold text-xl text-slate-900 mb-2">Critical Thinking &amp; STEM</h3>
-                    <p class="text-slate-600 text-sm">Project-based learning, debate competitions, and analytical reasoning frameworks.</p>
-                </div>
-            </div>
-
-            <!-- Academic Classes Table -->
-            <div class="mt-16 bg-emerald-950 text-white rounded-2xl p-8 shadow-xl">
-                <h3 class="text-2xl font-bold text-amber-400 mb-4">Classes Offered &amp; Age Levels</h3>
-                <div class="grid md:grid-cols-3 gap-6 text-slate-200">
-                    <div class="border-l-2 border-amber-400 pl-4">
-                        <h4 class="font-bold text-white text-lg">Primary Section</h4>
-                        <p class="text-sm mt-1 text-slate-300">Kindergarten to Grade 5</p>
-                        <p class="text-xs text-slate-400 mt-2">Focus: Basic Literacy, Hifz foundational letters, Numeracy &amp; Social play.</p>
-                    </div>
-                    <div class="border-l-2 border-amber-400 pl-4">
-                        <h4 class="font-bold text-white text-lg">Middle School</h4>
-                        <p class="text-sm mt-1 text-slate-300">Grade 6 to Grade 8</p>
-                        <p class="text-xs text-slate-400 mt-2">Focus: STEM integration, Arabic grammar, Seerah, Lab experiments.</p>
-                    </div>
-                    <div class="border-l-2 border-amber-400 pl-4">
-                        <h4 class="font-bold text-white text-lg">High School</h4>
-                        <p class="text-sm mt-1 text-slate-300">Grade 9 to Grade 12</p>
-                        <p class="text-xs text-slate-400 mt-2">Focus: Board exam prep, College guidance, Advanced Islamic Fiqh &amp; Leadership.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 6: ADMISSIONS PROCESS & ELIGIBILITY -->
-    <section id="admissions" class="py-20 bg-slate-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-emerald-700 font-bold uppercase tracking-wider text-sm">Admissions Open 2026-27</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Join the Al-Noor Family</h2>
-                <p class="text-slate-600 mt-4 text-base">Simple, transparent, and parent-friendly admission process.</p>
-            </div>
-
-            <!-- Admission Steps -->
-            <div class="grid md:grid-cols-4 gap-6 mb-16">
-                <div class="bg-white p-6 rounded-xl shadow-sm text-center relative">
-                    <div class="w-10 h-10 rounded-full bg-emerald-700 text-white font-bold flex items-center justify-center mx-auto mb-4">1</div>
-                    <h3 class="font-bold text-slate-900 mb-2">Online Enquiry</h3>
-                    <p class="text-xs text-slate-600">Fill out our online application form with basic student details.</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-sm text-center relative">
-                    <div class="w-10 h-10 rounded-full bg-emerald-700 text-white font-bold flex items-center justify-center mx-auto mb-4">2</div>
-                    <h3 class="font-bold text-slate-900 mb-2">Assessment &amp; Interaction</h3>
-                    <p class="text-xs text-slate-600">Brief academic assessment &amp; friendly interaction for child and parents.</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-sm text-center relative">
-                    <div class="w-10 h-10 rounded-full bg-emerald-700 text-white font-bold flex items-center justify-center mx-auto mb-4">3</div>
-                    <h3 class="font-bold text-slate-900 mb-2">Document Verification</h3>
-                    <p class="text-xs text-slate-600">Submit birth certificate, past report cards, and identity documents.</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-sm text-center relative">
-                    <div class="w-10 h-10 rounded-full bg-emerald-700 text-white font-bold flex items-center justify-center mx-auto mb-4">4</div>
-                    <h3 class="font-bold text-slate-900 mb-2">Fee Payment &amp; Enrollment</h3>
-                    <p class="text-xs text-slate-600">Confirm seat by completing admission fee formalities.</p>
-                </div>
-            </div>
-
-            <!-- Form & Requirements grid -->
-            <div class="grid lg:grid-cols-2 gap-12">
-                <!-- Admission Enquiry Form -->
-                <div class="bg-white p-8 rounded-2xl shadow-xl border border-slate-200">
-                    <h3 class="text-2xl font-bold text-slate-900 mb-2">Online Admission Enquiry</h3>
-                    <p class="text-sm text-slate-600 mb-6">Complete this form and our admissions office will get in touch within 24 hours.</p>
-
-                    <form onsubmit="event.preventDefault(); alert('Thank you! Your admission enquiry has been submitted successfully.');" class="space-y-4">
-                        <div>
-                            <label class="block text-xs font-bold text-slate-700 mb-1">Parent / Guardian Full Name *</label>
-                            <input type="text" required placeholder="e.g. Abdullah Ahmad" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-600 text-sm">
-                        </div>
-                        <div class="grid grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-xs font-bold text-slate-700 mb-1">Phone Number *</label>
-                                <input type="tel" required placeholder="+1 555 000 0000" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-600 text-sm">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-bold text-slate-700 mb-1">Email Address</label>
-                                <input type="email" placeholder="parent@example.com" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-600 text-sm">
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-xs font-bold text-slate-700 mb-1">Student's Full Name *</label>
-                                <input type="text" required placeholder="Child's Name" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-600 text-sm">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-bold text-slate-700 mb-1">Grade Applying For *</label>
-                                <select required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-600 text-sm bg-white">
-                                    <option value="">Select Grade</option>
-                                    <option>Kindergarten</option>
-                                    <option>Grade 1 - 5 (Primary)</option>
-                                    <option>Grade 6 - 8 (Middle)</option>
-                                    <option>Grade 9 - 12 (High School)</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-slate-700 mb-1">Additional Message / Questions</label>
-                            <textarea rows="3" placeholder="Tell us about your child's background..." class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-600 text-sm"></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-3.5 rounded-xl shadow-lg transition">
-                            Submit Admission Enquiry
-                        </button>
-                    </form>
-                </div>
-
-                <!-- Documents & Info -->
-                <div class="space-y-6">
-                    <div class="bg-emerald-950 text-white p-6 rounded-2xl shadow-lg">
-                        <h4 class="font-bold text-amber-400 text-lg mb-3"><i class="fa-solid fa-file-lines mr-2"></i> Required Documents</h4>
-                        <ul class="space-y-2 text-sm text-slate-300">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400 text-xs"></i> Official Student Birth Certificate copy</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400 text-xs"></i> 4 Recent passport-size photographs</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400 text-xs"></i> Transfer Certificate (TC) from previous school</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400 text-xs"></i> Previous academic year report card</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400 text-xs"></i> Parent ID / Passport copies</li>
-                        </ul>
-                    </div>
-
-                    <div class="bg-white p-6 rounded-2xl shadow-md border border-slate-200">
-                        <h4 class="font-bold text-slate-900 text-lg mb-3"><i class="fa-solid fa-download text-emerald-700 mr-2"></i> School Downloads</h4>
-                        <div class="flex flex-col sm:flex-row gap-4">
-                            <button onclick="alert('Downloading School Prospectus Brochure (PDF)...')" class="flex-1 border border-slate-300 hover:border-emerald-600 p-3 rounded-xl flex items-center justify-center gap-2 text-sm font-semibold text-slate-700 transition">
-                                <i class="fa-solid fa-file-pdf text-rose-600 text-lg"></i> School Prospectus 2026
-                            </button>
-                            <button onclick="alert('Downloading Fee Structure (PDF)...')" class="flex-1 border border-slate-300 hover:border-emerald-600 p-3 rounded-xl flex items-center justify-center gap-2 text-sm font-semibold text-slate-700 transition">
-                                <i class="fa-solid fa-file-pdf text-rose-600 text-lg"></i> Fee Structure Details
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 8: FACILITIES -->
-    <section id="facilities" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-emerald-700 font-bold uppercase tracking-wider text-sm">🏫 World-Class Infrastructure</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">School Campus &amp; Facilities</h2>
-                <p class="text-slate-600 mt-4 text-base">Designed to nurture physical safety, academic growth, and spiritual tranquility.</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="rounded-xl overflow-hidden border border-slate-200 bg-slate-50 shadow-sm hover:shadow-md transition">
-                    <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=600&q=80" alt="Classroom" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="font-bold text-slate-900 text-lg">Smart Classrooms</h3>
-                        <p class="text-xs text-slate-600 mt-1">Air-conditioned classrooms equipped with smart interactive boards and ergonomic seating.</p>
-                    </div>
-                </div>
-
-                <div class="rounded-xl overflow-hidden border border-slate-200 bg-slate-50 shadow-sm hover:shadow-md transition">
-                    <img src="https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&w=600&q=80" alt="Masjid Area" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="font-bold text-slate-900 text-lg">On-Campus Masjid</h3>
-                        <p class="text-xs text-slate-600 mt-1">Spacious prayer hall for daily Jama'at prayers, Friday Jumu'ah, and Hifz circles.</p>
-                    </div>
-                </div>
-
-                <div class="rounded-xl overflow-hidden border border-slate-200 bg-slate-50 shadow-sm hover:shadow-md transition">
-                    <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=600&q=80" alt="Library" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="font-bold text-slate-900 text-lg">Islamic &amp; Modern Library</h3>
-                        <p class="text-xs text-slate-600 mt-1">Over 15,000+ Islamic reference books, modern fiction, encyclopedias, and digital archives.</p>
-                    </div>
-                </div>
-
-                <div class="rounded-xl overflow-hidden border border-slate-200 bg-slate-50 shadow-sm hover:shadow-md transition">
-                    <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=600&q=80" alt="Science Lab" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="font-bold text-slate-900 text-lg">Science &amp; Tech Labs</h3>
-                        <p class="text-xs text-slate-600 mt-1">State-of-the-art physics, chemistry, biology, and high-speed computer labs.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mt-8 grid md:grid-cols-3 gap-6">
-                <div class="p-5 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center gap-4">
-                    <div class="text-emerald-700 text-3xl"><i class="fa-solid fa-shield-halved"></i></div>
-                    <div>
-                        <h4 class="font-bold text-slate-900 text-sm">24/7 CCTV &amp; Security</h4>
-                        <p class="text-xs text-slate-600">Complete campus security coverage with trained security personnel.</p>
-                    </div>
-                </div>
-
-                <div class="p-5 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center gap-4">
-                    <div class="text-emerald-700 text-3xl"><i class="fa-solid fa-bus"></i></div>
-                    <div>
-                        <h4 class="font-bold text-slate-900 text-sm">Safe Transport Fleet</h4>
-                        <p class="text-xs text-slate-600">GPS-tracked buses covering all major city routes with female attendants.</p>
-                    </div>
-                </div>
-
-                <div class="p-5 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center gap-4">
-                    <div class="text-emerald-700 text-3xl"><i class="fa-solid fa-futbol"></i></div>
-                    <div>
-                        <h4 class="font-bold text-slate-900 text-sm">Sports Complex</h4>
-                        <p class="text-xs text-slate-600">Dedicated football ground, basketball court, and archery facilities.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 9 & 11: STUDENT LIFE & ACHIEVEMENTS -->
-    <section class="py-20 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12">
-                <!-- Student Life -->
-                <div>
-                    <span class="text-emerald-700 font-bold uppercase tracking-wider text-sm">🎨 Vibrant Environment</span>
-                    <h2 class="text-3xl font-extrabold text-slate-900 mt-2 mb-6">Student Life &amp; Activities</h2>
-                    
-                    <div class="space-y-4">
-                        <div class="bg-white p-5 rounded-xl shadow-sm flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-lg shrink-0"><i class="fa-solid fa-trophy"></i></div>
-                            <div>
-                                <h3 class="font-bold text-slate-900">Qur'an Competitions &amp; Qira'at</h3>
-                                <p class="text-xs text-slate-600 mt-1">Annual inter-school Tajweed and Hifz competitions fostering healthy competition in sacred learning.</p>
-                            </div>
-                        </div>
-
-                        <div class="bg-white p-5 rounded-xl shadow-sm flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-lg shrink-0"><i class="fa-solid fa-hand-holding-heart"></i></div>
-                            <div>
-                                <h3 class="font-bold text-slate-900">Community Service &amp; Charity Drive</h3>
-                                <p class="text-xs text-slate-600 mt-1">Student-led Ramadan food packages distribution and local community support initiatives.</p>
-                            </div>
-                        </div>
-
-                        <div class="bg-white p-5 rounded-xl shadow-sm flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-lg bg-sky-100 text-sky-700 flex items-center justify-center font-bold text-lg shrink-0"><i class="fa-solid fa-compass"></i></div>
-                            <div>
-                                <h3 class="font-bold text-slate-900">Educational Trips &amp; Sports Day</h3>
-                                <p class="text-xs text-slate-600 mt-1">Excursions to science centers, historical Islamic exhibitions, and sports meets.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Achievements -->
-                <div>
-                    <span class="text-emerald-700 font-bold uppercase tracking-wider text-sm">🏆 Wall of Pride</span>
-                    <h2 class="text-3xl font-extrabold text-slate-900 mt-2 mb-6">Recent Achievements</h2>
-
-                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-6">
-                        <div class="flex items-center gap-4">
-                            <div class="text-4xl text-amber-500"><i class="fa-solid fa-award"></i></div>
-                            <div>
-                                <h3 class="font-bold text-slate-900">100% Board Exam Pass Rate</h3>
-                                <p class="text-xs text-slate-600">Top honors in regional academic board exams for Grade 10 &amp; 12.</p>
-                            </div>
-                        </div>
-                        <hr class="border-slate-100">
-                        <div class="flex items-center gap-4">
-                            <div class="text-4xl text-emerald-600"><i class="fa-solid fa-star"></i></div>
-                            <div>
-                                <h3 class="font-bold text-slate-900">45+ Huffaz Graduated</h3>
-                                <p class="text-xs text-slate-600">Students completing full Qur'an memorization with verified Sanad certificate.</p>
-                            </div>
-                        </div>
-                        <hr class="border-slate-100">
-                        <div class="flex items-center gap-4">
-                            <div class="text-4xl text-sky-600"><i class="fa-solid fa-microchip"></i></div>
-                            <div>
-                                <h3 class="font-bold text-slate-900">1st Place Regional Science Fair</h3>
-                                <p class="text-xs text-slate-600">Student innovation award for eco-friendly solar water filtration design.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 10: GALLERY 📸 -->
-    <section id="gallery" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <span class="text-emerald-700 font-bold uppercase tracking-wider text-sm">📸 Moments &amp; Life</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">School Gallery</h2>
-            </div>
-
-            <!-- Gallery Filter Buttons (Interactive JS) -->
-            <div class="flex flex-wrap justify-center gap-2 mb-10 text-xs sm:text-sm">
-                <button onclick="filterGallery('all')" class="gallery-btn bg-emerald-700 text-white font-semibold px-4 py-2 rounded-full transition">All Photos</button>
-                <button onclick="filterGallery('campus')" class="gallery-btn bg-slate-100 text-slate-700 font-semibold px-4 py-2 rounded-full hover:bg-slate-200 transition">Campus</button>
-                <button onclick="filterGallery('islamic')" class="gallery-btn bg-slate-100 text-slate-700 font-semibold px-4 py-2 rounded-full hover:bg-slate-200 transition">Islamic Activities</button>
-                <button onclick="filterGallery('events')" class="gallery-btn bg-slate-100 text-slate-700 font-semibold px-4 py-2 rounded-full hover:bg-slate-200 transition">Events &amp; Sports</button>
-            </div>
-
-            <!-- Photo Grid -->
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="gallery-item campus overflow-hidden rounded-xl h-64 shadow-md group relative">
-                    <img src="https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" alt="Gallery 1">
-                    <div class="absolute inset-0 bg-emerald-950/60 opacity-0 group-hover:opacity-100 transition flex items-end p-4 text-white">
-                        <p class="font-semibold text-sm">School Campus &amp; Prayer Area</p>
-                    </div>
-                </div>
-
-                <div class="gallery-item islamic overflow-hidden rounded-xl h-64 shadow-md group relative">
-                    <img src="https://images.unsplash.com/photo-1609599006353-e629aaabfeae?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" alt="Gallery 2">
-                    <div class="absolute inset-0 bg-emerald-950/60 opacity-0 group-hover:opacity-100 transition flex items-end p-4 text-white">
-                        <p class="font-semibold text-sm">Qur'an Recitation Circle</p>
-                    </div>
-                </div>
-
-                <div class="gallery-item events overflow-hidden rounded-xl h-64 shadow-md group relative">
-                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" alt="Gallery 3">
-                    <div class="absolute inset-0 bg-emerald-950/60 opacity-0 group-hover:opacity-100 transition flex items-end p-4 text-white">
-                        <p class="font-semibold text-sm">Annual Day Ceremony</p>
-                    </div>
-                </div>
-
-                <div class="gallery-item campus overflow-hidden rounded-xl h-64 shadow-md group relative">
-                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" alt="Gallery 4">
-                    <div class="absolute inset-0 bg-emerald-950/60 opacity-0 group-hover:opacity-100 transition flex items-end p-4 text-white">
-                        <p class="font-semibold text-sm">Interactive Science Learning</p>
-                    </div>
-                </div>
-
-                <div class="gallery-item events overflow-hidden rounded-xl h-64 shadow-md group relative">
-                    <img src="https://images.unsplash.com/photo-1526676037777-05a232554f77?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" alt="Gallery 5">
-                    <div class="absolute inset-0 bg-emerald-950/60 opacity-0 group-hover:opacity-100 transition flex items-end p-4 text-white">
-                        <p class="font-semibold text-sm">Annual Sports Meet</p>
-                    </div>
-                </div>
-
-                <div class="gallery-item islamic overflow-hidden rounded-xl h-64 shadow-md group relative">
-                    <img src="https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" alt="Gallery 6">
-                    <div class="absolute inset-0 bg-emerald-950/60 opacity-0 group-hover:opacity-100 transition flex items-end p-4 text-white">
-                        <p class="font-semibold text-sm">Ramadan Charity Drive</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 12: PARENTS CORNER -->
-    <section id="parents" class="py-20 bg-slate-900 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <span class="text-amber-400 font-bold uppercase tracking-wider text-sm">👨‍👩‍👧‍👦 Information Hub</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Parents Corner</h2>
-                <p class="text-slate-400 mt-2 text-sm">Important announcements, circulars, and quick access for current parents.</p>
-            </div>
-
-            <div class="grid lg:grid-cols-3 gap-8">
-                <!-- Circulars & Notices -->
-                <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700">
-                    <h3 class="font-bold text-amber-400 text-lg mb-4 flex items-center gap-2">
-                        <i class="fa-solid fa-bullhorn"></i> Latest Notices &amp; Circulars
-                    </h3>
-                    <ul class="space-y-4 text-xs text-slate-300">
-                        <li class="border-b border-slate-700 pb-3">
-                            <span class="text-emerald-400 font-semibold block mb-1">Aug 25, 2026</span>
-                            Parent-Teacher Meeting (PTM) scheduled for upcoming Saturday.
-                        </li>
-                        <li class="border-b border-slate-700 pb-3">
-                            <span class="text-emerald-400 font-semibold block mb-1">Aug 18, 2026</span>
-                            Mid-term Examination Timetable released for Grades 6 - 12.
-                        </li>
-                        <li>
-                            <span class="text-emerald-400 font-semibold block mb-1">Aug 10, 2026</span>
-                            Annual Qur'an Competition registration guidelines.
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Academic Calendar -->
-                <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700">
-                    <h3 class="font-bold text-amber-400 text-lg mb-4 flex items-center gap-2">
-                        <i class="fa-solid fa-calendar-days"></i> Upcoming Events
-                    </h3>
-                    <div class="space-y-3 text-xs">
-                        <div class="flex justify-between items-center bg-slate-700/50 p-2.5 rounded-lg">
-                            <span>Science Exhibition 2026</span>
-                            <span class="bg-emerald-700 text-white px-2 py-0.5 rounded">Sept 15</span>
-                        </div>
-                        <div class="flex justify-between items-center bg-slate-700/50 p-2.5 rounded-lg">
-                            <span>Islamic Heritage Week</span>
-                            <span class="bg-emerald-700 text-white px-2 py-0.5 rounded">Oct 02</span>
-                        </div>
-                        <div class="flex justify-between items-center bg-slate-700/50 p-2.5 rounded-lg">
-                            <span>Term-1 Report Card Distribution</span>
-                            <span class="bg-emerald-700 text-white px-2 py-0.5 rounded">Oct 20</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Parent Portal Login -->
-                <div class="bg-gradient-to-br from-emerald-900 to-emerald-950 p-6 rounded-2xl border border-emerald-700">
-                    <h3 class="font-bold text-white text-lg mb-2 flex items-center gap-2">
-                        <i class="fa-solid fa-lock text-amber-400"></i> Parent Portal Login
-                    </h3>
-                    <p class="text-xs text-slate-300 mb-4">Access attendance, report cards, fee receipts, and homework.</p>
-                    <form onsubmit="event.preventDefault(); alert('Redirecting to secure parent portal...');" class="space-y-3">
-                        <input type="text" placeholder="Parent Student ID" required class="w-full px-3 py-2.5 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white focus:outline-none focus:border-amber-400">
-                        <input type="password" placeholder="Password" required class="w-full px-3 py-2.5 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white focus:outline-none focus:border-amber-400">
-                        <button type="submit" class="w-full bg-amber-500 hover:bg-amber-600 text-emerald-950 font-bold py-2.5 rounded-lg text-xs transition">
-                            Login to Portal
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 13: CONTACT US -->
-    <section id="contact" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-emerald-700 font-bold uppercase tracking-wider text-sm">📍 Connect With Us</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Get in Touch</h2>
-                <p class="text-slate-600 mt-2 text-sm">We are here to answer all your questions regarding admissions, academics, and school life.</p>
-            </div>
-
-            <div class="grid lg:grid-cols-2 gap-12">
-                <!-- Info & Office Timings -->
-                <div class="space-y-6">
-                    <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-location-dot"></i></div>
-                        <div>
-                            <h4 class="font-bold text-slate-900">School Address</h4>
-                            <p class="text-sm text-slate-600 mt-1">123 Islamic Academy Way, Education District, City, State 10001</p>
-                        </div>
-                    </div>
-
-                    <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-phone"></i></div>
-                        <div>
-                            <h4 class="font-bold text-slate-900">Phone &amp; WhatsApp</h4>
-                            <p class="text-sm text-slate-600 mt-1">+1 (555) 019-2834 / +1 (555) 019-2835</p>
-                        </div>
-                    </div>
-
-                    <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-envelope"></i></div>
-                        <div>
-                            <h4 class="font-bold text-slate-900">Email Address</h4>
-                            <p class="text-sm text-slate-600 mt-1">info@alnooracademy.edu | admissions@alnooracademy.edu</p>
-                        </div>
-                    </div>
-
-                    <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-clock"></i></div>
-                        <div>
-                            <h4 class="font-bold text-slate-900">Office Timings</h4>
-                            <p class="text-sm text-slate-600 mt-1">Monday – Thursday: 8:00 AM – 3:30 PM</p>
-                            <p class="text-sm text-slate-600">Friday: 8:00 AM – 12:30 PM (Jumu'ah Break)</p>
-                            <p class="text-sm text-slate-600">Saturday – Sunday: Closed</p>
-                        </div>
-                    </div>
-
-                    <!-- Map Placeholder -->
-                    <div class="rounded-xl overflow-hidden border border-slate-200 h-48 bg-slate-100 relative flex items-center justify-center">
-                        <iframe title="Google Maps" class="w-full h-full border-0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215707164102!2d-73.98657868459377!3d40.74844097932847!2m3!1f0!2f0!3f0!2m3!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1629911000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
-                    </div>
-                </div>
-
-                <!-- General Contact Form -->
-                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-sm">
-                    <h3 class="text-2xl font-bold text-slate-900 mb-6">Send Us a Message</h3>
-                    <form onsubmit="event.preventDefault(); alert('Message sent successfully!');" class="space-y-4">
-                        <div>
-                            <label class="block text-xs font-bold text-slate-700 mb-1">Your Name</label>
-                            <input type="text" required placeholder="Full Name" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-600 text-sm bg-white">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-slate-700 mb-1">Your Email</label>
-                            <input type="email" required placeholder="name@example.com" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-600 text-sm bg-white">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-slate-700 mb-1">Subject</label>
-                            <input type="text" required placeholder="Inquiry subject" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-600 text-sm bg-white">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-slate-700 mb-1">Message</label>
-                            <textarea rows="4" required placeholder="How can we help you?" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-600 text-sm bg-white"></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-3.5 rounded-xl shadow transition">
-                            Send Message
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="bg-emerald-950 text-slate-300 py-12 border-t border-emerald-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8 mb-8">
-                <!-- Brand Info -->
-                <div class="space-y-4 md:col-span-1">
-                    <div class="flex items-center gap-2 text-white font-bold text-lg">
-                        <i class="fa-solid fa-mosque text-amber-400"></i> AL-NOOR ACADEMY
-                    </div>
-                    <p class="text-xs text-slate-400 leading-relaxed">
-                        Nurturing Faith, Knowledge &amp; Future Leaders. Excellence in Deen and Duniya education.
-                    </p>
-                    <div class="flex gap-3 text-slate-400 text-lg">
-                        <a href="#" class="hover:text-amber-400"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="#" class="hover:text-amber-400"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" class="hover:text-amber-400"><i class="fa-brands fa-youtube"></i></a>
-                        <a href="#" class="hover:text-amber-400"><i class="fa-brands fa-whatsapp"></i></a>
-                    </div>
-                </div>
-
-                <!-- Quick Links -->
-                <div>
-                    <h4 class="font-bold text-white text-sm mb-3">Quick Navigation</h4>
-                    <ul class="space-y-2 text-xs">
-                        <li><a href="#about" class="hover:text-amber-400">About Us</a></li>
-                        <li><a href="#deen" class="hover:text-amber-400">Deen Education</a></li>
-                        <li><a href="#duniya" class="hover:text-amber-400">Academics</a></li>
-                        <li><a href="#admissions" class="hover:text-amber-400">Admissions</a></li>
-                        <li><a href="#facilities" class="hover:text-amber-400">Campus Facilities</a></li>
-                    </ul>
-                </div>
-
-                <!-- Academics -->
-                <div>
-                    <h4 class="font-bold text-white text-sm mb-3">Programs</h4>
-                    <ul class="space-y-2 text-xs">
-                        <li><a href="#" class="hover:text-amber-400">Tahfeez-ul-Qur'an Program</a></li>
-                        <li><a href="#" class="hover:text-amber-400">Primary Education</a></li>
-                        <li><a href="#" class="hover:text-amber-400">Middle &amp; High School</a></li>
-                        <li><a href="#" class="hover:text-amber-400">Arabic Language Course</a></li>
-                        <li><a href="#" class="hover:text-amber-400">STEM &amp; Robotics Club</a></li>
-                    </ul>
-                </div>
-
-                <!-- Prayer Quote -->
-                <div class="bg-emerald-900/60 p-4 rounded-xl border border-emerald-800">
-                    <p class="font-quran text-amber-300 text-lg">رَّبِّ زِدْنِي عِلْمًا</p>
-                    <p class="text-xs text-slate-300 mt-2 italic">"My Lord, increase me in knowledge." (Quran 20:114)</p>
-                </div>
-            </div>
-
-            <div class="pt-8 border-t border-emerald-900 text-center text-xs text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-4">
-                <p>&copy; 2026 Al-Noor Academy. All rights reserved.</p>
-                <p>Designed for GitHub Pages Deployment</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- JavaScript Interactivity -->
-    <script>
-        // Mobile Navigation Toggle
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Close mobile nav when clicking a link
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-
-        // Gallery Filter Logic
-        function filterGallery(category) {
-            const items = document.querySelectorAll('.gallery-item');
-            const buttons = document.querySelectorAll('.gallery-btn');
-
-            buttons.forEach(btn => {
-                btn.classList.remove('bg-emerald-700', 'text-white');
-                btn.classList.add('bg-slate-100', 'text-slate-700');
-            });
-
-            event.target.classList.remove('bg-slate-100', 'text-slate-700');
-            event.target.classList.add('bg-emerald-700', 'text-white');
-
-            items.forEach(item => {
-                if (category === 'all' || item.classList.contains(category)) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        }
-    </script>
 </body>
 </html>
