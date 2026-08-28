@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welldone School | Deen & Duniya</title>
+  <style>
+    :root{
+      --green:#0b6b45; --dark:#06442d; --gold:#d9a928; --cream:#f7f4eb;
+      --text:#173126; --white:#fff;
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);background:#fff;line-height:1.6}
+    .top{background:var(--dark);color:#fff;padding:8px 6%;font-size:.9rem;text-align:center}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:14px 6%;position:sticky;top:0;background:#fff;z-index:10;box-shadow:0 2px 14px #00000010}
+    .brand{font-weight:800;color:var(--green);font-size:1.35rem}.brand span{color:var(--gold)}
+    nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0} nav a{text-decoration:none;color:var(--text);font-weight:600}
+    .hero{min-height:76vh;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:30px;padding:55px 8%;background:linear-gradient(135deg,var(--cream),#fff)}
+    .eyebrow{color:var(--gold);font-weight:800;letter-spacing:1.5px;text-transform:uppercase}
+    h1{font-size:clamp(2.7rem,6vw,5.4rem);line-height:1.05;margin:12px 0;color:var(--dark)}
+    h1 span{color:var(--green)} .hero p{font-size:1.1rem;max-width:620px}
+    .buttons{display:flex;gap:14px;flex-wrap:wrap;margin-top:25px}.btn{display:inline-block;padding:13px 22px;border-radius:9px;text-decoration:none;font-weight:700}
+    .primary{background:var(--green);color:#fff}.secondary{border:2px solid var(--green);color:var(--green)}
+    .hero img{width:100%;height:430px;object-fit:cover;border-radius:22px;box-shadow:20px 20px 0 #d9a92830}
+    section{padding:75px 8%}.section-title{text-align:center;margin-bottom:42px}.section-title h2{font-size:2.3rem;color:var(--dark);margin:0}.section-title p{max-width:700px;margin:10px auto;color:#52635a}
+    .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:25px}.card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 10px 30px #063d2b15}
+    .card img{width:100%;height:250px;object-fit:cover}.card .content{padding:25px}.tag{color:var(--green);font-weight:800}
+    .feature{background:var(--dark);color:#fff}.feature h2{color:#fff}.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.feature-item{padding:25px;border:1px solid #ffffff33;border-radius:16px;background:#ffffff0a}.feature-item h3{color:#f3c54b}
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.gallery img{width:100%;height:270px;object-fit:cover;border-radius:16px}
+    .admission{background:linear-gradient(135deg,#0b6b45,#06442d);color:#fff;text-align:center;border-radius:25px;margin:0 8% 75px;padding:55px 25px}.admission h2{font-size:2.5rem;margin:0 0 10px}
+    .contact{background:var(--cream)}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}.info{background:#fff;padding:25px;border-radius:16px}
+    footer{background:#052d20;color:#dce9e2;text-align:center;padding:30px}
+    @media(max-width:800px){nav ul{display:none}.hero,.contact-grid{grid-template-columns:1fr}.hero{padding-top:35px}.hero img{height:300px}.cards,.feature-grid{grid-template-columns:1fr}.gallery{grid-template-columns:1fr}.gallery img{height:250px}section{padding:55px 6%}}
+  </style>
+</head>
+<body>
+  <div class="top">Welldone School • Education for Deen & Duniya</div>
+  <nav>
+    <div class="brand">WELL<span>DONE</span> SCHOOL</div>
+    <ul>
+      <li><a href="#about">About</a></li><li><a href="#schools">Our Schools</a></li>
+      <li><a href="#gallery">Gallery</a></li><li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <div class="eyebrow">Welcome to Welldone School</div>
+      <h1>Where <span>Deen</span> and Duniya Grow Together</h1>
+      <p>Welldone School provides a balanced education that nurtures strong Islamic values alongside quality academic learning, helping children grow with knowledge, character and confidence.</p>
+      <div class="buttons">
+        <a class="btn primary" href="#schools">Explore Our Schools</a>
+        <a class="btn secondary" href="#contact">Contact Us</a>
+      </div>
+    </div>
+    <img src="school-1.jpeg" alt="Welldone School campus">
+  </header>
+
+  <section id="about">
+    <div class="section-title">
+      <h2>Our Vision</h2>
+      <p>To nurture young learners through meaningful education, strong values and a caring environment.</p>
+    </div>
+    <div class="cards">
+      <div class="card"><div class="content"><div class="tag">DEEN</div><h3>Islamic Values</h3><p>We help children develop good character, discipline, faith and a strong connection with Islamic values.</p></div></div>
+      <div class="card"><div class="content"><div class="tag">DUNIYA</div><h3>Academic Excellence</h3><p>We provide quality academic education and encourage curiosity, confidence and lifelong learning.</p></div></div>
+    </div>
+  </section>
+
+  <section id="schools" style="background:#f7f4eb">
+    <div class="section-title"><h2>Our Schools</h2><p>Two learning environments under one Welldone family.</p></div>
+    <div class="cards">
+      <article class="card">
+        <img src="school-2.jpeg" alt="Welldone Nursery and Primary School">
+        <div class="content"><div class="tag">OUR FIRST SCHOOL</div><h3>Welldone Nursery & Primary School</h3><p>A warm and child-friendly environment where young learners begin their educational journey.</p></div>
+      </article>
+      <article class="card">
+        <img src="school-3.jpeg" alt="TMS Welldone Matriculation School">
+        <div class="content"><div class="tag">OUR SECOND SCHOOL</div><h3>TMS Welldone Matriculation School</h3><p>Supporting students with academic learning, values and personal growth. Classes currently extend up to 8th Standard.</p></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="feature">
+    <div class="section-title"><h2>Why Choose Welldone?</h2><p>A balanced foundation for a meaningful future.</p></div>
+    <div class="feature-grid">
+      <div class="feature-item"><h3>☪ Values</h3><p>Deen-based learning and character development.</p></div>
+      <div class="feature-item"><h3>📚 Learning</h3><p>Academic education designed to build knowledge and confidence.</p></div>
+      <div class="feature-item"><h3>🌱 Growth</h3><p>A caring environment for children to grow into responsible individuals.</p></div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="section-title"><h2>Our Campus</h2><p>A glimpse of the Welldone School environment.</p></div>
+    <div class="gallery">
+      <img src="school-1.jpeg" alt="Welldone campus">
+      <img src="school-2.jpeg" alt="Welldone school building">
+      <img src="school-3.jpeg" alt="TMS Welldone school building">
+    </div>
+  </section>
+
+  <div class="admission">
+    <h2>Admissions</h2>
+    <p>Give your child an education that brings together Deen, Duniya and strong character.</p>
+    <a class="btn primary" style="background:#fff;color:#06442d" href="#contact">Enquire About Admission</a>
+  </div>
+
+  <section id="contact" class="contact">
+    <div class="section-title"><h2>Contact Us</h2><p>We would be happy to hear from you.</p></div>
+    <div class="contact-grid">
+      <div class="info"><h3>Welldone School</h3><p><strong>Principal / Correspondent:</strong> Rafiq Raja</p><p><strong>Phone:</strong> 0000000000</p><p><strong>Email:</strong> thoufeeq124@gmail.com</p></div>
+      <div class="info"><h3>Location</h3><p>Visit Welldone School at our campus location.</p><a class="btn primary" target="_blank" href="https://maps.app.goo.gl/QNvUEZZ7KvziC67d7?g_st=ic">Open in Google Maps</a></div>
+    </div>
+  </section>
+
+  <footer>© 2026 Welldone School • Deen & Duniya, Growing Together</footer>
+</body>
+</html>
