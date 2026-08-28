@@ -1,118 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welldone School | Deen & Duniya</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welldone Nursery & Primary Islamic School | Official Website</title>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
-    :root{
-      --green:#0b6b45; --dark:#06442d; --gold:#d9a928; --cream:#f7f4eb;
-      --text:#173126; --white:#fff;
+    :root {
+      --primary: #0d3b66;
+      --secondary: #f4d35e;
+      --accent: #e76f51;
+      --dark: #1d3557;
+      --light: #f8f9fa;
+      --white: #ffffff;
+      --success: #25d366;
     }
-    *{box-sizing:border-box} html{scroll-behavior:smooth}
-    body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);background:#fff;line-height:1.6}
-    .top{background:var(--dark);color:#fff;padding:8px 6%;font-size:.9rem;text-align:center}
-    nav{display:flex;align-items:center;justify-content:space-between;padding:14px 6%;position:sticky;top:0;background:#fff;z-index:10;box-shadow:0 2px 14px #00000010}
-    .brand{font-weight:800;color:var(--green);font-size:1.35rem}.brand span{color:var(--gold)}
-    nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0} nav a{text-decoration:none;color:var(--text);font-weight:600}
-    .hero{min-height:76vh;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:30px;padding:55px 8%;background:linear-gradient(135deg,var(--cream),#fff)}
-    .eyebrow{color:var(--gold);font-weight:800;letter-spacing:1.5px;text-transform:uppercase}
-    h1{font-size:clamp(2.7rem,6vw,5.4rem);line-height:1.05;margin:12px 0;color:var(--dark)}
-    h1 span{color:var(--green)} .hero p{font-size:1.1rem;max-width:620px}
-    .buttons{display:flex;gap:14px;flex-wrap:wrap;margin-top:25px}.btn{display:inline-block;padding:13px 22px;border-radius:9px;text-decoration:none;font-weight:700}
-    .primary{background:var(--green);color:#fff}.secondary{border:2px solid var(--green);color:var(--green)}
-    .hero img{width:100%;height:430px;object-fit:cover;border-radius:22px;box-shadow:20px 20px 0 #d9a92830}
-    section{padding:75px 8%}.section-title{text-align:center;margin-bottom:42px}.section-title h2{font-size:2.3rem;color:var(--dark);margin:0}.section-title p{max-width:700px;margin:10px auto;color:#52635a}
-    .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:25px}.card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 10px 30px #063d2b15}
-    .card img{width:100%;height:250px;object-fit:cover}.card .content{padding:25px}.tag{color:var(--green);font-weight:800}
-    .feature{background:var(--dark);color:#fff}.feature h2{color:#fff}.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.feature-item{padding:25px;border:1px solid #ffffff33;border-radius:16px;background:#ffffff0a}.feature-item h3{color:#f3c54b}
-    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.gallery img{width:100%;height:270px;object-fit:cover;border-radius:16px}
-    .admission{background:linear-gradient(135deg,#0b6b45,#06442d);color:#fff;text-align:center;border-radius:25px;margin:0 8% 75px;padding:55px 25px}.admission h2{font-size:2.5rem;margin:0 0 10px}
-    .contact{background:var(--cream)}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}.info{background:#fff;padding:25px;border-radius:16px}
-    footer{background:#052d20;color:#dce9e2;text-align:center;padding:30px}
-    @media(max-width:800px){nav ul{display:none}.hero,.contact-grid{grid-template-columns:1fr}.hero{padding-top:35px}.hero img{height:300px}.cards,.feature-grid{grid-template-columns:1fr}.gallery{grid-template-columns:1fr}.gallery img{height:250px}section{padding:55px 6%}}
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
+    body { background-color: #f4f7f6; color: #333; line-height: 1.6; }
+
+    /* Top Bar */
+    .top-bar { background: var(--dark); color: #fff; padding: 8px 15px; font-size: 0.85rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+    .top-bar-links { display: flex; gap: 15px; }
+    .top-bar a { color: var(--secondary); text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 5px; }
+
+    /* Header & Navigation */
+    header { background: var(--white); padding: 15px 20px; box-shadow: 0 2px 15px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; }
+    .logo { display: flex; align-items: center; gap: 12px; }
+    .logo-icon { width: 45px; height: 45px; background: var(--primary); color: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: bold; border: 2px solid var(--secondary); }
+    .logo-text h1 { font-size: 1.2rem; color: var(--primary); line-height: 1.1; font-weight: 700; }
+    .logo-text p { font-size: 0.75rem; color: #666; font-weight: 600; letter-spacing: 0.5px; }
+
+    /* Hero Banner */
+    .hero { background: linear-gradient(rgba(13, 59, 102, 0.88), rgba(0, 31, 63, 0.92)), url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1200&auto=format&fit=crop&q=80') center/cover no-repeat; color: var(--white); text-align: center; padding: 65px 20px; }
+    .badge { background: var(--secondary); color: var(--primary); padding: 6px 16px; border-radius: 20px; font-weight: 700; font-size: 0.85rem; display: inline-block; margin-bottom: 15px; text-transform: uppercase; }
+    .hero h2 { font-size: 2rem; margin-bottom: 12px; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+    .hero p { font-size: 1.05rem; opacity: 0.95; margin-bottom: 25px; max-width: 650px; margin-left: auto; margin-right: auto; }
+    .btn-group { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn { padding: 12px 24px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 0.95rem; transition: 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+    .btn-primary { background: var(--secondary); color: var(--primary); }
+    .btn-outline { border: 2px solid var(--white); color: var(--white); }
+
+    /* Quick Stats */
+    .stats-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 15px; max-width: 900px; margin: -30px auto 30px auto; padding: 0 15px; position: relative; z-index: 10; }
+    .stat-card { background: var(--white); padding: 20px 10px; border-radius: 12px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+    .stat-card i { font-size: 1.8rem; color: var(--primary); margin-bottom: 6px; }
+    .stat-card h3 { font-size: 1.3rem; color: var(--dark); font-weight: 700; }
+    .stat-card p { font-size: 0.8rem; color: #666; }
+
+    /* Main Container & Sections */
+    .container { max-width: 900px; margin: auto; padding: 0 15px; }
+    .section-title { text-align: center; margin: 35px 0 20px 0; }
+    .section-title h2 { color: var(--primary); font-size: 1.6rem; position: relative; display: inline-block; padding-bottom: 8px; }
+    .section-title h2::after { content: ''; width: 50%; height: 3px; background: var(--secondary); position: absolute; bottom: 0; left: 25%; }
+
+    /* Grid Cards */
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+    .card { background: var(--white); border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+    .card-img { width: 100%; height: 190px; object-fit: cover; }
+    .card-body { padding: 20px; }
+    .card-body h3 { color: var(--primary); margin-bottom: 10px; font-size: 1.2rem; }
+    .card-body p { font-size: 0.9rem; color: #555; }
+
+    /* Features List */
+    .features-card { background: var(--white); padding: 25px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 30px; }
+    .features-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-top: 15px; }
+    .features-list li { font-size: 0.9rem; display: flex; align-items: center; gap: 10px; font-weight: 500; }
+    .features-list li i { color: var(--success); font-size: 1.1rem; }
+
+    /* Gallery Grid */
+    .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .gallery-grid img { width: 100%; height: 130px; object-fit: cover; border-radius: 8px; }
+
+    /* Admission Form */
+    .form-card { background: var(--white); padding: 25px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 30px; }
+    .form-group { margin-bottom: 15px; }
+    .form-group label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 5px; color: var(--dark); }
+    .form-control { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 0.9rem; outline: none; }
+    .form-control:focus { border-color: var(--primary); }
+
+    /* Contact Details Card */
+    .contact-card { background: var(--white); padding: 25px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 30px; }
+    .contact-item { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+    .contact-icon { width: 40px; height: 40px; background: #eef4fb; color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
+    .contact-text h4 { font-size: 0.9rem; color: #777; font-weight: 600; }
+    .contact-text a, .contact-text p { font-size: 1rem; color: var(--dark); text-decoration: none; font-weight: 600; }
+
+    /* Floating WhatsApp Button */
+    .whatsapp-btn { position: fixed; bottom: 20px; right: 20px; background: var(--success); color: var(--white); width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 1000; text-decoration: none; }
+
+    /* Footer */
+    footer { background: var(--dark); color: #aaa; text-align: center; padding: 30px 20px; font-size: 0.85rem; margin-top: 40px; }
+    footer p { margin-bottom: 8px; }
+    footer a { color: var(--secondary); text-decoration: none; }
   </style>
 </head>
 <body>
-  <div class="top">Welldone School • Education for Deen & Duniya</div>
-  <nav>
-    <div class="brand">WELL<span>DONE</span> SCHOOL</div>
-    <ul>
-      <li><a href="#about">About</a></li><li><a href="#schools">Our Schools</a></li>
-      <li><a href="#gallery">Gallery</a></li><li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
 
-  <header class="hero">
-    <div>
-      <div class="eyebrow">Welcome to Welldone School</div>
-      <h1>Where <span>Deen</span> and Duniya Grow Together</h1>
-      <p>Welldone School provides a balanced education that nurtures strong Islamic values alongside quality academic learning, helping children grow with knowledge, character and confidence.</p>
-      <div class="buttons">
-        <a class="btn primary" href="#schools">Explore Our Schools</a>
-        <a class="btn secondary" href="#contact">Contact Us</a>
-      </div>
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <span>📢 Admissions Open 2026 - 2027</span>
+    <div class="top-bar-links">
+      <a href="tel:9600306532"><i class="fa-solid fa-phone"></i> 9600306532</a>
+      <a href="mailto:rafiqraja532@gmail.com"><i class="fa-solid fa-envelope"></i> Email Us</a>
     </div>
-    <img src="school-1.jpeg" alt="Welldone School campus">
-  </header>
-
-  <section id="about">
-    <div class="section-title">
-      <h2>Our Vision</h2>
-      <p>To nurture young learners through meaningful education, strong values and a caring environment.</p>
-    </div>
-    <div class="cards">
-      <div class="card"><div class="content"><div class="tag">DEEN</div><h3>Islamic Values</h3><p>We help children develop good character, discipline, faith and a strong connection with Islamic values.</p></div></div>
-      <div class="card"><div class="content"><div class="tag">DUNIYA</div><h3>Academic Excellence</h3><p>We provide quality academic education and encourage curiosity, confidence and lifelong learning.</p></div></div>
-    </div>
-  </section>
-
-  <section id="schools" style="background:#f7f4eb">
-    <div class="section-title"><h2>Our Schools</h2><p>Two learning environments under one Welldone family.</p></div>
-    <div class="cards">
-      <article class="card">
-        <img src="school-2.jpeg" alt="Welldone Nursery and Primary School">
-        <div class="content"><div class="tag">OUR FIRST SCHOOL</div><h3>Welldone Nursery & Primary School</h3><p>A warm and child-friendly environment where young learners begin their educational journey.</p></div>
-      </article>
-      <article class="card">
-        <img src="school-3.jpeg" alt="TMS Welldone Matriculation School">
-        <div class="content"><div class="tag">OUR SECOND SCHOOL</div><h3>TMS Welldone Matriculation School</h3><p>Supporting students with academic learning, values and personal growth. Classes currently extend up to 8th Standard.</p></div>
-      </article>
-    </div>
-  </section>
-
-  <section class="feature">
-    <div class="section-title"><h2>Why Choose Welldone?</h2><p>A balanced foundation for a meaningful future.</p></div>
-    <div class="feature-grid">
-      <div class="feature-item"><h3>☪ Values</h3><p>Deen-based learning and character development.</p></div>
-      <div class="feature-item"><h3>📚 Learning</h3><p>Academic education designed to build knowledge and confidence.</p></div>
-      <div class="feature-item"><h3>🌱 Growth</h3><p>A caring environment for children to grow into responsible individuals.</p></div>
-    </div>
-  </section>
-
-  <section id="gallery">
-    <div class="section-title"><h2>Our Campus</h2><p>A glimpse of the Welldone School environment.</p></div>
-    <div class="gallery">
-      <img src="school-1.jpeg" alt="Welldone campus">
-      <img src="school-2.jpeg" alt="Welldone school building">
-      <img src="school-3.jpeg" alt="TMS Welldone school building">
-    </div>
-  </section>
-
-  <div class="admission">
-    <h2>Admissions</h2>
-    <p>Give your child an education that brings together Deen, Duniya and strong character.</p>
-    <a class="btn primary" style="background:#fff;color:#06442d" href="#contact">Enquire About Admission</a>
   </div>
 
-  <section id="contact" class="contact">
-    <div class="section-title"><h2>Contact Us</h2><p>We would be happy to hear from you.</p></div>
-    <div class="contact-grid">
-      <div class="info"><h3>Welldone School</h3><p><strong>Principal / Correspondent:</strong> Rafiq Raja.S</p><p><strong>Phone:</strong> 9600306532</p><p><strong>Email:</strong> rafiqraja532@gmail.com</p></div>
-      <div class="info"><h3>Location</h3><p>Visit Welldone School at our campus location.</p><a class="btn primary" target="_blank" href="https://maps.app.goo.gl/QNvUEZZ7KvziC67d7?g_st=ic">Open in Google Maps</a></div>
+  <!-- Main Navigation Header -->
+  <header>
+    <div class="logo">
+      <div class="logo-icon">WD</div>
+      <div class="logo-text">
+        <h1>Welldone School</h1>
+        <p>DEEN & DUNYA TOGETHER</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="hero">
+    <span class="badge">Nursery & Primary Islamic School</span>
+    <h2>Nurturing Faith, Knowledge & Excellence</h2>
+    <p>Providing holistic matriculation education integrated with authentic Islamic values (Deen & Dunya together) in Puliangudi.</p>
+    <div class="btn-group">
+      <a href="#inquiry-form" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i> Apply for Admission</a>
+      <a href="https://wa.me/919600306532" class="btn btn-outline" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp Us</a>
     </div>
   </section>
 
-  <footer>© 2026 Welldone School • Deen & Duniya, Growing Together</footer>
+  <!-- Quick Stats -->
+  <div class="stats-container">
+    <div class="stat-card">
+      <i class="fa-solid fa-graduation-cap"></i>
+      <h3>LKG - IX</h3>
+      <p>Grades Offered</p>
+    </div>
+    <div class="stat-card">
+      <i class="fa-solid fa-book-quran"></i>
+      <h3>Deeniyath</h3>
+      <p>Islamic Syllabus</p>
+    </div>
+    <div class="stat-card">
+      <i class="fa-solid fa-chalkboard-user"></i>
+      <h3>100%</h3>
+      <p>Dedicated Staff</p>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- Programs Offered -->
+    <div class="section-title">
+      <h2>Our Educational Programs</h2>
+    </div>
+    
+    <div class="card-grid">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?w=600&auto=format&fit=crop&q=80" class="card-img" alt="Nursery & KG">
+        <div class="card-body">
+          <h3>Nursery & Kindergarten</h3>
+          <p>Activity-based learning designed to build confidence, motor skills, and basic Islamic manners from an early age.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&auto=format&fit=crop&q=80" class="card-img" alt="Primary School">
+        <div class="card-body">
+          <h3>Primary & High School</h3>
+          <p>Comprehensive matriculation curriculum preparing students with strong academic foundations in Science, Math, & English.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1609599006353-e629aaabfeae?w=600&auto=format&fit=crop&q=80" class="card-img" alt="Islamic Studies">
+        <div class="card-body">
+          <h3>Deeniyath & Islamic Integration</h3>
+          <p>Quran recitation, Tajweed, Islamic moral studies, and daily Sunnah practices seamlessly integrated into regular school hours.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Campus Highlights -->
+    <div class="section-title">
+      <h2>Why Choose Welldone School?</h2>
+    </div>
+    <div class="features-card">
+      <ul class="features-list">
+        <li><i class="fa-solid fa-circle-check"></i> Integrated Academic & Islamic Curriculum</li>
+        <li><i class="fa-solid fa-circle-check"></i> Safe & Clean Campus Environment</li>
+        <li><i class="fa-solid fa-circle-check"></i> Experienced & Caring Faculty</li>
+        <li><i class="fa-solid fa-circle-check"></i> Individual Attention for Every Child</li>
+        <li><i class="fa-solid fa-circle-check"></i> Modern Learning Facilities</li>
+        <li><i class="fa-solid fa-circle-check"></i> Focus on Moral Character & Manners</li>
+      </ul>
+    </div>
+
+    <!-- Gallery Section -->
+    <div class="section-title">
+      <h2>School Campus Gallery</h2>
+    </div>
+    <div class="gallery-grid">
+      <img src="https://images.unsplash.com/photo-1562774053-701939374585?w=400&auto=format&fit=crop&q=80" alt="School Campus">
+      <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?w=400&auto=format&fit=crop&q=80" alt="Classroom">
+      <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&auto=format&fit=crop&q=80" alt="Students Learning">
+    </div>
+
+    <!-- Contact Details Card -->
+    <div class="section-title">
+      <h2>Contact Us</h2>
+    </div>
+    <div class="contact-card">
+      <div class="contact-item">
+        <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+        <div class="contact-text">
+          <h4>Call Admissions</h4>
+          <a href="tel:9600306532">+91 96003 06532</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+        <div class="contact-text">
+          <h4>Email Address</h4>
+          <a href="mailto:rafiqraja532@gmail.com">rafiqraja532@gmail.com</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+        <div class="contact-text">
+          <h4>Campus Address</h4>
+          <p>Puliangudi, Tamil Nadu</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Admission Inquiry Form -->
+    <div class="section-title" id="inquiry-form">
+      <h2>Admission Inquiry (2026-27)</h2>
+    </div>
+    <div class="form-card">
+      <form action="https://formspree.io/f/xbjnqpkz" method="POST">
+        <div class="form-group">
+          <label>Parent / Guardian Name</label>
+          <input type="text" name="parent_name" class="form-control" placeholder="Enter full name" required>
+        </div>
+        <div class="form-group">
+          <label>Mobile / WhatsApp Number</label>
+          <input type="tel" name="phone_number" class="form-control" placeholder="Enter mobile number" required>
+        </div>
+        <div class="form-group">
+          <label>Student Name & Seeking Grade</label>
+          <input type="text" name="student_details" class="form-control" placeholder="e.g., Mohamed - Standard 3" required>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%; border: none; cursor: pointer; justify-content: center;"><i class="fa-solid fa-paper-plane"></i> Submit Admission Inquiry</button>
+      </form>
+    </div>
+
+  </div>
+
+  <!-- Floating WhatsApp Action -->
+  <a href="https://wa.me/919600306532" class="whatsapp-btn" target="_blank" aria-label="WhatsApp Chat">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Footer -->
+  <footer>
+    <p><strong>Welldone Nursery & Primary Islamic School</strong></p>
+    <p>Puliangudi, Tamil Nadu</p>
+    <p>Phone: <a href="tel:9600306532">9600306532</a> | Email: <a href="mailto:rafiqraja532@gmail.com">rafiqraja532@gmail.com</a></p>
+    <p style="margin-top: 15px; font-size: 0.75rem;">&copy; 2026 Welldone School. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
