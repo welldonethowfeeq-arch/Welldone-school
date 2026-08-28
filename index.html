@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Welldone Nursery & Primary Islamic School | Official Website</title>
-  <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     :root {
@@ -12,7 +11,6 @@
       --secondary: #f4d35e;
       --accent: #e76f51;
       --dark: #1d3557;
-      --light: #f8f9fa;
       --white: #ffffff;
       --success: #25d366;
     }
@@ -20,94 +18,45 @@
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
     body { background-color: #f4f7f6; color: #333; line-height: 1.6; }
 
-    /* Top Bar */
-    .top-bar { background: var(--dark); color: #fff; padding: 8px 15px; font-size: 0.85rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
-    .top-bar-links { display: flex; gap: 15px; }
-    .top-bar a { color: var(--secondary); text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 5px; }
-
     /* Header & Navigation */
     header { background: var(--white); padding: 15px 20px; box-shadow: 0 2px 15px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; }
     .logo { display: flex; align-items: center; gap: 12px; }
     .logo-icon { width: 45px; height: 45px; background: var(--primary); color: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: bold; border: 2px solid var(--secondary); }
-    .logo-text h1 { font-size: 1.2rem; color: var(--primary); line-height: 1.1; font-weight: 700; }
-    .logo-text p { font-size: 0.75rem; color: #666; font-weight: 600; letter-spacing: 0.5px; }
+    .logo-text h1 { font-size: 1.2rem; color: var(--primary); font-weight: 700; }
+    .logo-text p { font-size: 0.75rem; color: #666; font-weight: 600; }
 
     /* Hero Banner */
-    .hero { background: linear-gradient(rgba(13, 59, 102, 0.88), rgba(0, 31, 63, 0.92)), url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1200&auto=format&fit=crop&q=80') center/cover no-repeat; color: var(--white); text-align: center; padding: 65px 20px; }
-    .badge { background: var(--secondary); color: var(--primary); padding: 6px 16px; border-radius: 20px; font-weight: 700; font-size: 0.85rem; display: inline-block; margin-bottom: 15px; text-transform: uppercase; }
-    .hero h2 { font-size: 2rem; margin-bottom: 12px; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
-    .hero p { font-size: 1.05rem; opacity: 0.95; margin-bottom: 25px; max-width: 650px; margin-left: auto; margin-right: auto; }
-    .btn-group { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-    .btn { padding: 12px 24px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 0.95rem; transition: 0.3s; display: inline-flex; align-items: center; gap: 8px; }
-    .btn-primary { background: var(--secondary); color: var(--primary); }
-    .btn-outline { border: 2px solid var(--white); color: var(--white); }
+    .hero { background: linear-gradient(rgba(13, 59, 102, 0.88), rgba(0, 31, 63, 0.92)), url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1200&auto=format&fit=crop&q=80') center/cover no-repeat; color: var(--white); text-align: center; padding: 50px 20px; }
+    .hero h2 { font-size: 1.8rem; margin-bottom: 10px; }
 
-    /* Quick Stats */
-    .stats-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 15px; max-width: 900px; margin: -30px auto 30px auto; padding: 0 15px; position: relative; z-index: 10; }
-    .stat-card { background: var(--white); padding: 20px 10px; border-radius: 12px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
-    .stat-card i { font-size: 1.8rem; color: var(--primary); margin-bottom: 6px; }
-    .stat-card h3 { font-size: 1.3rem; color: var(--dark); font-weight: 700; }
-    .stat-card p { font-size: 0.8rem; color: #666; }
+    .container { max-width: 900px; margin: auto; padding: 20px 15px; }
+    .section-title { text-align: center; margin: 25px 0 15px 0; }
+    .section-title h2 { color: var(--primary); font-size: 1.5rem; }
 
-    /* Main Container & Sections */
-    .container { max-width: 900px; margin: auto; padding: 0 15px; }
-    .section-title { text-align: center; margin: 35px 0 20px 0; }
-    .section-title h2 { color: var(--primary); font-size: 1.6rem; position: relative; display: inline-block; padding-bottom: 8px; }
-    .section-title h2::after { content: ''; width: 50%; height: 3px; background: var(--secondary); position: absolute; bottom: 0; left: 25%; }
+    /* Homework Section */
+    .hw-card { background: var(--white); border-radius: 15px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); margin-bottom: 30px; border-top: 5px solid var(--primary); }
+    .hw-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; flex-wrap: wrap; }
+    .class-selector, .form-control { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 0.95rem; outline: none; margin-bottom: 12px; }
+    
+    .hw-list { list-style: none; margin-top: 15px; }
+    .hw-item { padding: 12px; border-bottom: 1px dashed #ddd; background: #f9f9f9; border-radius: 8px; margin-bottom: 8px; }
+    .hw-subject { font-weight: bold; color: var(--accent); }
 
-    /* Grid Cards */
-    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
-    .card { background: var(--white); border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-    .card-img { width: 100%; height: 190px; object-fit: cover; }
-    .card-body { padding: 20px; }
-    .card-body h3 { color: var(--primary); margin-bottom: 10px; font-size: 1.2rem; }
-    .card-body p { font-size: 0.9rem; color: #555; }
+    /* Admin Box */
+    .admin-toggle-btn { background: var(--dark); color: #fff; padding: 8px 16px; border-radius: 20px; border: none; font-size: 0.85rem; cursor: pointer; font-weight: bold; }
+    .admin-box { display: none; background: #edf2f7; padding: 20px; border-radius: 12px; margin-top: 20px; border: 2px dashed var(--primary); }
+    .admin-box.active { display: block; }
+    .btn-submit { background: var(--primary); color: #fff; padding: 12px 20px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; width: 100%; }
 
-    /* Features List */
-    .features-card { background: var(--white); padding: 25px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 30px; }
-    .features-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-top: 15px; }
-    .features-list li { font-size: 0.9rem; display: flex; align-items: center; gap: 10px; font-weight: 500; }
-    .features-list li i { color: var(--success); font-size: 1.1rem; }
+    /* WhatsApp Admission Form */
+    .form-card { background: var(--white); padding: 25px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 30px; border-top: 5px solid var(--success); }
+    .btn-whatsapp { background: var(--success); color: var(--white); width: 100%; padding: 12px; border: none; border-radius: 30px; font-weight: bold; font-size: 1rem; cursor: pointer; }
 
-    /* Gallery Grid */
-    .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-    .gallery-grid img { width: 100%; height: 130px; object-fit: cover; border-radius: 8px; }
-
-    /* Admission Form */
-    .form-card { background: var(--white); padding: 25px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 30px; }
-    .form-group { margin-bottom: 15px; }
-    .form-group label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 5px; color: var(--dark); }
-    .form-control { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 0.9rem; outline: none; }
-    .form-control:focus { border-color: var(--primary); }
-
-    /* Contact Details Card */
-    .contact-card { background: var(--white); padding: 25px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 30px; }
-    .contact-item { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
-    .contact-icon { width: 40px; height: 40px; background: #eef4fb; color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
-    .contact-text h4 { font-size: 0.9rem; color: #777; font-weight: 600; }
-    .contact-text a, .contact-text p { font-size: 1rem; color: var(--dark); text-decoration: none; font-weight: 600; }
-
-    /* Floating WhatsApp Button */
-    .whatsapp-btn { position: fixed; bottom: 20px; right: 20px; background: var(--success); color: var(--white); width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 1000; text-decoration: none; }
-
-    /* Footer */
-    footer { background: var(--dark); color: #aaa; text-align: center; padding: 30px 20px; font-size: 0.85rem; margin-top: 40px; }
-    footer p { margin-bottom: 8px; }
-    footer a { color: var(--secondary); text-decoration: none; }
+    footer { background: var(--dark); color: #aaa; text-align: center; padding: 25px 20px; font-size: 0.85rem; margin-top: 30px; }
   </style>
 </head>
 <body>
 
-  <!-- Top Announcement Bar -->
-  <div class="top-bar">
-    <span>📢 Admissions Open 2026 - 2027</span>
-    <div class="top-bar-links">
-      <a href="tel:9600306532"><i class="fa-solid fa-phone"></i> 9600306532</a>
-      <a href="mailto:rafiqraja532@gmail.com"><i class="fa-solid fa-envelope"></i> Email Us</a>
-    </div>
-  </div>
-
-  <!-- Main Navigation Header -->
   <header>
     <div class="logo">
       <div class="logo-icon">WD</div>
@@ -118,121 +67,175 @@
     </div>
   </header>
 
-  <!-- Hero Banner -->
   <section class="hero">
-    <span class="badge">Nursery & Primary Islamic School</span>
-    <h2>Nurturing Faith, Knowledge & Excellence</h2>
-    <p>Providing holistic matriculation education integrated with authentic Islamic values (Deen & Dunya together) in Puliangudi.</p>
-    <div class="btn-group">
-      <a href="#inquiry-form" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i> Apply for Admission</a>
-      <a href="https://wa.me/919600306532" class="btn btn-outline" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp Us</a>
-    </div>
+    <h2>Welldone Nursery & Primary School</h2>
+    <p>Official Daily Homework & Inquiry Portal</p>
   </section>
-
-  <!-- Quick Stats -->
-  <div class="stats-container">
-    <div class="stat-card">
-      <i class="fa-solid fa-graduation-cap"></i>
-      <h3>LKG - IX</h3>
-      <p>Grades Offered</p>
-    </div>
-    <div class="stat-card">
-      <i class="fa-solid fa-book-quran"></i>
-      <h3>Deeniyath</h3>
-      <p>Islamic Syllabus</p>
-    </div>
-    <div class="stat-card">
-      <i class="fa-solid fa-chalkboard-user"></i>
-      <h3>100%</h3>
-      <p>Dedicated Staff</p>
-    </div>
-  </div>
 
   <div class="container">
 
-    <!-- Programs Offered -->
-    <div class="section-title">
-      <h2>Our Educational Programs</h2>
-    </div>
-    
-    <div class="card-grid">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?w=600&auto=format&fit=crop&q=80" class="card-img" alt="Nursery & KG">
-        <div class="card-body">
-          <h3>Nursery & Kindergarten</h3>
-          <p>Activity-based learning designed to build confidence, motor skills, and basic Islamic manners from an early age.</p>
-        </div>
+    <!-- Homework Viewer -->
+    <div class="hw-card">
+      <div class="hw-header">
+        <h3><i class="fa-solid fa-book-open"></i> Student Homework Viewer</h3>
+        <button class="admin-toggle-btn" onclick="toggleAdminPanel()"><i class="fa-solid fa-lock"></i> Teacher Login</button>
       </div>
 
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&auto=format&fit=crop&q=80" class="card-img" alt="Primary School">
-        <div class="card-body">
-          <h3>Primary & High School</h3>
-          <p>Comprehensive matriculation curriculum preparing students with strong academic foundations in Science, Math, & English.</p>
-        </div>
-      </div>
+      <label style="font-weight:600; font-size:0.85rem;">Select Student Class:</label>
+      <select id="classViewSelect" class="class-selector" onchange="fetchHomework()">
+        <option value="std1">Standard 1</option>
+        <option value="std2">Standard 2</option>
+        <option value="std3">Standard 3</option>
+        <option value="std4">Standard 4</option>
+        <option value="std5">Standard 5</option>
+      </select>
 
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1609599006353-e629aaabfeae?w=600&auto=format&fit=crop&q=80" class="card-img" alt="Islamic Studies">
-        <div class="card-body">
-          <h3>Deeniyath & Islamic Integration</h3>
-          <p>Quran recitation, Tajweed, Islamic moral studies, and daily Sunnah practices seamlessly integrated into regular school hours.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Campus Highlights -->
-    <div class="section-title">
-      <h2>Why Choose Welldone School?</h2>
-    </div>
-    <div class="features-card">
-      <ul class="features-list">
-        <li><i class="fa-solid fa-circle-check"></i> Integrated Academic & Islamic Curriculum</li>
-        <li><i class="fa-solid fa-circle-check"></i> Safe & Clean Campus Environment</li>
-        <li><i class="fa-solid fa-circle-check"></i> Experienced & Caring Faculty</li>
-        <li><i class="fa-solid fa-circle-check"></i> Individual Attention for Every Child</li>
-        <li><i class="fa-solid fa-circle-check"></i> Modern Learning Facilities</li>
-        <li><i class="fa-solid fa-circle-check"></i> Focus on Moral Character & Manners</li>
+      <ul id="homeworkContainer" class="hw-list">
+        <li class="hw-item">Loading today's homework...</li>
       </ul>
+
+      <!-- Secret Admin Panel (Password Protected) -->
+      <div id="adminPanel" class="admin-box">
+        <h4 style="margin-bottom: 12px; color: var(--primary);"><i class="fa-solid fa-user-shield"></i> Post Daily Homework (Admin Only)</h4>
+        
+        <input type="password" id="adminPassword" class="form-control" placeholder="Enter Secret Admin Password" required>
+        
+        <label style="font-weight:600; font-size:0.85rem;">Select Class to Update:</label>
+        <select id="adminClass" class="form-control">
+          <option value="std1">Standard 1</option>
+          <option value="std2">Standard 2</option>
+          <option value="std3">Standard 3</option>
+          <option value="std4">Standard 4</option>
+          <option value="std5">Standard 5</option>
+        </select>
+
+        <input type="text" id="adminSubject" class="form-control" placeholder="Subject Name (e.g. English, Math, Deeniyath)" required>
+        <textarea id="adminHomework" class="form-control" rows="3" placeholder="Type the homework details here..." required></textarea>
+
+        <button type="button" class="btn-submit" onclick="postHomework()"><i class="fa-solid fa-paper-plane"></i> Publish Homework Live</button>
+      </div>
     </div>
 
-    <!-- Gallery Section -->
+    <!-- WhatsApp Admission Form -->
     <div class="section-title">
-      <h2>School Campus Gallery</h2>
+      <h2>Instant Admission Inquiry</h2>
     </div>
-    <div class="gallery-grid">
-      <img src="https://images.unsplash.com/photo-1562774053-701939374585?w=400&auto=format&fit=crop&q=80" alt="School Campus">
-      <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?w=400&auto=format&fit=crop&q=80" alt="Classroom">
-      <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&auto=format&fit=crop&q=80" alt="Students Learning">
+    <div class="form-card">
+      <form onsubmit="sendToWhatsApp(event)">
+        <input type="text" id="parentName" class="form-control" placeholder="Parent / Guardian Name" required>
+        <input type="tel" id="parentPhone" class="form-control" placeholder="WhatsApp Phone Number" required>
+        <input type="text" id="studentName" class="form-control" placeholder="Student Full Name" required>
+        <select id="seekingClass" class="form-control" required>
+          <option value="">-- Select Grade --</option>
+          <option value="LKG">LKG</option>
+          <option value="UKG">UKG</option>
+          <option value="Standard 1">Standard 1</option>
+          <option value="Standard 2">Standard 2</option>
+          <option value="Standard 3">Standard 3</option>
+        </select>
+        <button type="submit" class="btn-whatsapp">
+          <i class="fa-brands fa-whatsapp"></i> Send Application via WhatsApp
+        </button>
+      </form>
     </div>
 
-    <!-- Contact Details Card -->
-    <div class="section-title">
-      <h2>Contact Us</h2>
-    </div>
-    <div class="contact-card">
-      <div class="contact-item">
-        <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
-        <div class="contact-text">
-          <h4>Call Admissions</h4>
-          <a href="tel:9600306532">+91 96003 06532</a>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
-        <div class="contact-text">
-          <h4>Email Address</h4>
-          <a href="mailto:rafiqraja532@gmail.com">rafiqraja532@gmail.com</a>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
-        <div class="contact-text">
-          <h4>Campus Address</h4>
-          <p>Puliangudi, Tamil Nadu</p>
-        </div>
-      </div>
-    </div>
+  </div>
+
+  <footer>
+    <p><strong>Welldone Nursery & Primary Islamic School</strong></p>
+    <p>Puliangudi, Tamil Nadu | Contact: 9600306532</p>
+  </footer>
+
+  <script>
+    // PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL HERE
+    var GOOGLE_SCRIPT_URL = "YOUR_GOOGLE_APPS_SCRIPT_URL_HERE";
+
+    function toggleAdminPanel() {
+      var panel = document.getElementById("adminPanel");
+      panel.classList.toggle("active");
+    }
+
+    // Fetch Homework live from Google Sheet database
+    function fetchHomework() {
+      var selectedClass = document.getElementById("classViewSelect").value;
+      var container = document.getElementById("homeworkContainer");
+      container.innerHTML = '<li class="hw-item">Loading homework...</li>';
+
+      fetch(GOOGLE_SCRIPT_URL)
+        .then(response => response.json())
+        .then(data => {
+          var classData = data.filter(item => item.class === selectedClass);
+          if (classData.length === 0) {
+            container.innerHTML = '<li class="hw-item">No homework posted for this class today.</li>';
+          } else {
+            container.innerHTML = '';
+            classData.forEach(item => {
+              container.innerHTML += `
+                <li class="hw-item">
+                  <div class="hw-subject"><i class="fa-solid fa-book-bookmark"></i> ${item.subject}</div>
+                  <div>${item.homework}</div>
+                </li>
+              `;
+            });
+          }
+        })
+        .catch(err => {
+          container.innerHTML = '<li class="hw-item">Set up your Google Script URL to view live database homework.</li>';
+        });
+    }
+
+    // Post new homework directly from the website
+    function postHomework() {
+      var pwd = document.getElementById("adminPassword").value;
+      var cls = document.getElementById("adminClass").value;
+      var subj = document.getElementById("adminSubject").value;
+      var hw = document.getElementById("adminHomework").value;
+
+      if (!pwd || !subj || !hw) {
+        alert("Please fill in all fields including your password.");
+        return;
+      }
+
+      var payload = {
+        password: pwd,
+        class: cls,
+        subject: subj,
+        homework: hw
+      };
+
+      fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        body: JSON.stringify(payload)
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.status === "success") {
+          alert("Homework posted successfully!");
+          document.getElementById("adminSubject").value = "";
+          document.getElementById("adminHomework").value = "";
+          fetchHomework();
+        } else {
+          alert("Error: " + data.message);
+        }
+      });
+    }
+
+    function sendToWhatsApp(e) {
+      e.preventDefault();
+      var message = "*ADMISSION INQUIRY*%0A" +
+                    "Parent: " + encodeURIComponent(document.getElementById('parentName').value) + "%0A" +
+                    "Phone: " + encodeURIComponent(document.getElementById('parentPhone').value) + "%0A" +
+                    "Student: " + encodeURIComponent(document.getElementById('studentName').value) + "%0A" +
+                    "Grade: " + encodeURIComponent(document.getElementById('seekingClass').value);
+      window.open("https://wa.me/919600306532?text=" + message, '_blank');
+    }
+
+    // Load homework on page launch
+    fetchHomework();
+  </script>
+
+</body>
+</html>
 
     <!-- Admission Inquiry Form -->
     <div class="section-title" id="inquiry-form">
